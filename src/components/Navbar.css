@@ -1,11 +1,11 @@
 .Navbar {
     position: fixed;
     top: 0;
-    height: 12vmin;
+    height: 10vmin;
     width: 100%;
     padding: 0.5rem;
+    border-bottom: 1px solid white;
     backdrop-filter: blur(15px);
-    /* border-bottom: 1px solid white; */
     display: grid;
     align-items: center;
     justify-content: space-between;
@@ -15,7 +15,7 @@
 
 #logo {
     margin-left: 1rem;
-    font-size: 8vmin;
+    font-size: 7vmin;
     text-shadow: 0px 0px 25px white;
     animation: flicker 2.5s linear;
     transition: text-shadow 250ms linear;
@@ -54,7 +54,7 @@
     gap: 0.25rem;
     list-style: none;
     width: 100%;
-    font-size: 4vmin;
+    font-size: 3.5vmin;
 }
 
 #links a {
@@ -62,10 +62,10 @@
     display: block;
     text-decoration: none;
     transform: skew(15deg);
-    width: 10vw;
+    width: 8vw;
     border: 1px solid transparent;
     border-radius: 0.25rem;
-    padding-block: 2.5vmin;
+    padding-block: 1.75vmin;
     transition: background-color 250ms linear, color 250ms linear;
 }
 
@@ -84,12 +84,13 @@
     border: 1px solid white;
 }
 
-#theme {
-    height: 6.5dvh;
+#theme img {
+    height: 5dvh;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: white;
     margin-inline: 2.5dvw;
+    filter: invert(1);
+    cursor: pointer;
 }
 
 @media screen and (max-width:1024px) {
@@ -162,10 +163,10 @@
 .inverted #links a:hover {
     border: 1px solid black;
 }
-
+/* 
 .inverted #theme {
     background-color: black;
-}
+} */
 
 #scroll-tracker {
     background-color: white;

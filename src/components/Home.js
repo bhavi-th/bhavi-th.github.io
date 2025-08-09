@@ -19,14 +19,12 @@ function Home({ theme }) {
                 <li><a href="https://wa.me/919901949627" target="_blank" rel="noreferrer"><img src={theme ? WhatsappInverted : Whatsapp} alt="social links" /></a></li>
             </ul>
             <p className="fade-elements">
-                Welcome! I’m passionate about bringing ideas to life through coding,
-                crafting practical solutions that make a difference.
-                For me, technology is a tool to simplify tasks, solve problems, and create systems that work seamlessly.
-                With a focus on clarity and purpose, I’m dedicated to developing solutions that are not just functional but meaningful.
-                Let’s explore how technology can make things better, one line of code at a time
+                Welcome to my minimalist digi-space, where I craft clear and practical solutions to real-world problems. I believe technology should be purposeful—streamlining systems and making life easier, one line of code at a time.
             </p>
             <div id="btn-container" className="fade-elements">
-                <a href="#projects">View my work</a>
+                <a href="#projects">
+                    View my work
+                </a>
             </div>
         </section>
     )

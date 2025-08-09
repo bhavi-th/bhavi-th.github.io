@@ -35,15 +35,15 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar setTheme={setTheme} />
+      <Navbar theme={theme} setTheme={setTheme} />
       <ScrollTracker />
       <Home theme={theme} />
       <hr />
       <About />
       <hr />
-      <Projects />
-      <hr />
       <Skills />
+      <hr />
+      <Projects />
       <hr />
       <Contact />
       <hr />

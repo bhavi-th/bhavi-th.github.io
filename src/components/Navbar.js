@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import "./Navbar.css";
+import sunIcon from '../assets/sun.png';
+import moonIcon from '../assets/moon.png';
 
-export default function Navbar({ setTheme }) {
+export default function Navbar({ theme, setTheme }) {
 
     const [activeLink, setActiveLink] = useState("home");
     const [hamClicked, setHamClicked] = useState(false);
@@ -18,7 +20,10 @@ export default function Navbar({ setTheme }) {
                     setActiveLink(entry.target.id);
                 }
             });
-        }, { threshold: 0.1 });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -40% 0px"
+        });
 
         document.querySelectorAll("section").forEach((section) => {
             observer.observe(section);
@@ -63,14 +68,14 @@ export default function Navbar({ setTheme }) {
                         About
                     </li>
                 </a>
-                <a href="#projects" className={activeLink === "projects" ? "active" : ""}>
-                    <li>
-                        Projects
-                    </li>
-                </a>
                 <a href="#skills" className={activeLink === "skills" ? "active" : ""}>
                     <li>
                         Skills
+                    </li>
+                </a>
+                <a href="#projects" className={activeLink === "projects" ? "active" : ""}>
+                    <li>
+                        Projects
                     </li>
                 </a>
                 <a href="#contact" className={activeLink === "contact" ? "active" : ""}>
@@ -78,7 +83,18 @@ export default function Navbar({ setTheme }) {
                         Contact
                     </li>
                 </a>
-                <div id="theme" title="Click to change the site theme" onClick={toggleTheme}></div>
+                {/* <div id="theme" title="Click to change the site theme" onClick={toggleTheme}></div> */}
+                <div
+                  id="theme"
+                  title="Click to change the site theme"
+                  onClick={toggleTheme}
+                >
+                  <img
+                    src={theme ? moonIcon : sunIcon}
+                    alt="Theme toggle icon"
+                    className="theme-icon"
+                  />
+                </div>
             </ul>
         </nav>
     );

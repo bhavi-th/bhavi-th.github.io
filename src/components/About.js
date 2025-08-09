@@ -19,7 +19,7 @@ function About() {
                     Bhavith S
                 </span>
                 <p>
-                    Hello! I am a first-year Computer Science and Engineering student at BMS Institute of Technology and Management.
+                    Hello! I'm a passionate undergraduate student studying Computer Science and Engineering student at BMS Institute of Technology and Management.
                     Driven by curiosity and a passion for innovation, I'm eager to explore the limitless possibilities that technology offers.
                 </p>
                 {resumeAvailable ? <a href="/resume.pdf" id="resume" download="bhavith_resume.pdf">Download Resume</a> : <></>}

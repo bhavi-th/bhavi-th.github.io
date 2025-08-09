@@ -5,7 +5,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     align-items: center;
-    font-size: 4.5vmin;
+    font-size: 5vmin;
     padding-inline: 5vmin;
 }
 
@@ -13,7 +13,7 @@
     width: max-content;
     color: white;
     letter-spacing: 0.5vmin;
-    font-size: 14vmin;
+    font-size: 12vmin;
     padding-block: 2.5vmin;
     transition: color 250ms linear, text-shadow 250ms linear;
 }
@@ -44,19 +44,21 @@
     border-radius: 50%;
     padding: 2.5vmin;
     height: 11vmin;
+    transition: scale 250ms linear;
+    box-shadow: 0px 0px 15px white;
 }
 
 .inverted #social-links a {
     border: 1px solid black;
 }
 
+#social-links a:hover {
+    scale: 1.1;
+}
+
 #social-links img {
     height: 6vmin;
     aspect-ratio: 1/1;
-}
-
-#social-links a:hover {
-    box-shadow: 0px 0px 15px white;
 }
 
 .inverted #social-links a:hover {
@@ -74,6 +76,7 @@
 }
 
 .Home #btn-container a {
+    font-size:4vmin;
     text-decoration: none;
     grid-column: span 2;
     width: max-content;

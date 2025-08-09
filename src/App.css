@@ -34,14 +34,6 @@ body {
     color: white;
 }
 
-a:hover,
-#logo,
-#name,
-#theme,
-.Home button {
-    cursor: url('../public/cursor.cur'), auto;
-}
-
 @keyframes flicker {
 
     0%,

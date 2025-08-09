@@ -1,16 +1,16 @@
 import React from "react";
 import "./SkillCard.css"; // Create a CSS file for styling
 
-const SkillCard = ({ skillName, description, icon, level }) => {
+const SkillCard = ({ link, skillName, description, icon, level }) => {
     return (
-        <div className="Skill-card fade-elements">
+        <a href={link} target="_blank" rel="noreferrer" className="Skill-card fade-elements">
             <img id={skillName} src={icon} alt={`${skillName} logo`} className="skill-icon" />
             <h3>{skillName}</h3>
             <p>{description}</p>
             <div className="skill-level">
                 <span>Level : {level}</span>
             </div>
-        </div>
+        </a>
     );
 };
 

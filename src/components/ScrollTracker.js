@@ -18,7 +18,7 @@ const ScrollTracker = () => {
     return (
         <div id="scroll-tracker" style={{
             position: "fixed",
-            top: "12vmin",
+            top: "10vmin",
             width: `${scrollWidth}%`,
             height: "0.75vmin",
             transition: "width 0.1s ease-out"
