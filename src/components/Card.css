@@ -7,21 +7,21 @@
     padding: 2.5vmin;
     border:2.5px solid white;
     border-radius: 1.5vmin;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color:transparent;
     transition: box-shadow 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 
 .inverted .Card {
-    background-color: rgba(0, 0, 0, 0.2);
     border-color:black;
 }
 
 .Card:hover {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0px 0px 5px 2px white;
 }
 
 .inverted .Card:hover {
+    background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 5px 5px black;
 }
 
@@ -64,11 +64,11 @@
 
 .Card h3 {
     display: inline-block;
-    font-size: 5vmin;
+    font-size: 4vmin;
 }
 
 .Card p {
-    font-size: 3.5vmin;
+    font-size: 2.5vmin;
     text-indent: 5vmin;
 }
 

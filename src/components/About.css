@@ -24,7 +24,7 @@
 }
 
 .About #image-cover {
-    height: 35vmin;
+    height: 30vmin;
     width: fit-content;
     aspect-ratio: 1/1;
     display: flex;
@@ -48,16 +48,17 @@
 }
 
 .About img {
-    height: 65vmin;
+    height: 55vmin;
 }
 
 .About #name {
-    font-size: 6vmin;
+    font-size: 5vmin;
 }
 
 .About p {
-    font-size: 4.5vmin;
-    text-indent: 2.5vmin;
+    font-size: 3vmin;
+    text-indent: 10vmin;
+    text-align: justify;
 }
 
 #resume {
@@ -65,7 +66,7 @@
     margin: 2.5vmin;
     margin-bottom: 0px;
     padding: 2vmin;
-    font-size: 3vmin;
+    font-size: 2.5vmin;
     color: black;
     background-color: white;
     border-radius: 0.5vmin;
@@ -96,15 +97,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    text-align: justify;
 }
 
 #about-details span {
-    font-size: 5.5vmin;
+    font-size: 4.5vmin;
 }
 
 #about-intro,
 #about-skills {
-    font-size: 4.5vmin;
+    font-size: 3vmin;
 }
 
 .fade-in {

@@ -10,18 +10,19 @@
 
 .Contact p {
     padding: 2.5vmin;
-    font-size: 6.5vmin;
+    font-size: 3.5vmin;
     text-indent: 5vmin;
 }
 
 .Contact p::first-letter {
-    font-size: 8.5vmin;
+    font-size: 4.5vmin;
 }
 
 .Contact form {
     width: min-content;
     padding: 2.5vmin;
     background-color: rgba(255, 255, 255, 0.2);
+    border:2.5px solid white;
     border-radius: 2.5vmin;
     display: grid;
     gap: 2.5vmin;
@@ -29,10 +30,12 @@
 
 .inverted .Contact form {
     background-color: rgba(0, 0, 0, 0.2);
+    border:2.5px solid black;
 }
 
 .Contact span {
-    font-size: 6vmin;
+    text-align: center;
+    font-size: 5vmin;
 }
 
 .Contact input,
@@ -40,11 +43,11 @@
 .Contact button {
     padding: 0.5rem;
     padding-left: 1vmin;
-    font-size: 4vmin;
+    font-size: 2.5vmin;
     outline: none;
     background-color: black;
     color: white;
-    border: none;
+    border: 2.5px solid white;
     border-radius: 1vmin;
 }
 
@@ -53,6 +56,7 @@
 .inverted .Contact button {
     background-color: white;
     color: black;
+    border: 2.5px solid black;
 }
 
 .Contact input:focus,
@@ -68,7 +72,7 @@
 .Contact button {
     cursor: pointer;
     border-radius: 1vmin;
-    font-size: 6vmin;
+    font-size: 3.5vmin;
     color: rgb(0, 255, 0);
     transition: background-color 250ms linear, color 250ms linear;
 }

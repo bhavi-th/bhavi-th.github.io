@@ -15,7 +15,7 @@
 
 #logo {
     margin-left: 1rem;
-    font-size: 7vmin;
+    font-size: 5vmin;
     text-shadow: 0px 0px 25px white;
     animation: flicker 2.5s linear;
     transition: text-shadow 250ms linear;
@@ -54,7 +54,7 @@
     gap: 0.25rem;
     list-style: none;
     width: 100%;
-    font-size: 3.5vmin;
+    font-size: 2.5vmin;
 }
 
 #links a {
@@ -163,10 +163,6 @@
 .inverted #links a:hover {
     border: 1px solid black;
 }
-/* 
-.inverted #theme {
-    background-color: black;
-} */
 
 #scroll-tracker {
     background-color: white;

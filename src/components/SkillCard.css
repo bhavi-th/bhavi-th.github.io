@@ -46,13 +46,14 @@
 
 .Skill-card h3 {
     display: inline-block;
-    font-size: 6vmin;
+    font-size: 4vmin;
 }
 
 .Skill-card p {
-    font-size: 3.5vmin;
+    font-size: 2.5vmin;
+    text-indent: 3.5vmin;
 }
 
 .skill-level span {
-    font-size: 4.5vmin;
+    font-size: 3vmin;
 }

@@ -5,7 +5,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     align-items: center;
-    font-size: 5vmin;
+    font-size: 3.75vmin;
     padding-inline: 5vmin;
 }
 
@@ -13,7 +13,7 @@
     width: max-content;
     color: white;
     letter-spacing: 0.5vmin;
-    font-size: 12vmin;
+    font-size: 10vmin;
     padding-block: 2.5vmin;
     transition: color 250ms linear, text-shadow 250ms linear;
 }
@@ -68,15 +68,17 @@
 .Home p {
     grid-column: span 2;
     width: 75%;
-    text-indent: 2.5vmin;
+    text-indent: 5vmin;
+    text-align: justify;
+    line-height: 6vmin;
 }
 
 .Home p::first-letter {
-    font-size: 6vmin;
+    font-size: 4vmin;
 }
 
 .Home #btn-container a {
-    font-size:4vmin;
+    display:inline-block;
     text-decoration: none;
     grid-column: span 2;
     width: max-content;
@@ -85,7 +87,7 @@
     background-color: white;
     color: black;
     padding: 2.5vmin;
-    transition: color 250ms linear, background-color 250ms linear;
+    transition: color 250ms linear, background-color 250ms linear, transform 250ms linear;
 }
 
 .inverted .Home #btn-container a {
@@ -97,6 +99,7 @@
 .Home #btn-container a:hover {
     color: white;
     background-color: black;
+    transform: scale(1.05);
 }
 
 .inverted .Home #btn-container a:hover {

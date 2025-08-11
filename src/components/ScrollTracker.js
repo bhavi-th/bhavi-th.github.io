@@ -20,7 +20,7 @@ const ScrollTracker = () => {
             position: "fixed",
             top: "10vmin",
             width: `${scrollWidth}%`,
-            height: "0.75vmin",
+            height: "0.25vmin",
             transition: "width 0.1s ease-out"
         }} />
     );
