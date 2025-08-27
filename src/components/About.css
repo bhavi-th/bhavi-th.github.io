@@ -14,13 +14,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap: 5vmin;
     padding: 2.5vmin;
     border-radius: 2.5vmin;
-    box-shadow: 0px 0px 5px 2.5px white;
-}
-
-.inverted #about-card {
-    box-shadow: 0px 0px 5px 2.5px black;
+    box-shadow: 0px 0px 5px 2.5px var(--theme-bg-color);
 }
 
 .About #image-cover {
@@ -29,22 +26,15 @@
     aspect-ratio: 1/1;
     display: flex;
     align-items: center;
+    border: 1px solid var(--theme-color);
     border-radius: 50%;
-    box-shadow: 0px 0px 5px 5px white;
+    box-shadow: 0px 0px 5px 5px var(--theme-color);
     overflow: hidden;
     transition: box-shadow 250ms linear;
 }
 
-.inverted .About #image-cover {
-    box-shadow: 0px 0px 5px 5px black;
-}
-
 .About #image-cover:hover {
-    box-shadow: 0px 0px 20px 10px white;
-}
-
-.inverted .About #image-cover:hover {
-    box-shadow: 0px 0px 20px 10px black;
+    box-shadow: 0px 0px 20px 10px var(--theme-bg-color);
 }
 
 .About img {
@@ -57,6 +47,7 @@
 
 .About p {
     font-size: 3vmin;
+    font-weight: normal;
     text-indent: 10vmin;
     text-align: justify;
 }
@@ -67,27 +58,16 @@
     margin-bottom: 0px;
     padding: 2vmin;
     font-size: 2.5vmin;
-    color: black;
-    background-color: white;
+    color: var(--theme-color);
+    background-color: var(--theme-bg-color);
     border-radius: 0.5vmin;
     transition: background-color 250ms linear, color 250ms linear;
 }
 
-.inverted #resume {
-    color: white;
-    background-color: black;
-}
-
 #resume:hover {
-    box-shadow: 0px 0px 10px white;
-    background-color: black;
-    color: white;
-}
-
-.inverted #resume:hover {
-    box-shadow: 0px 0px 10px black;
-    background-color: white;
-    color: black;
+    box-shadow: 0px 0px 10px var(--theme-bg-color);
+    background-color: var(--theme-bg-color);
+    color: var(--theme-color);
 }
 
 /* About */

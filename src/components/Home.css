@@ -10,26 +10,11 @@
 }
 
 #name {
-    width: max-content;
-    color: white;
+    color: var(--theme-color);
     letter-spacing: 0.5vmin;
     font-size: 10vmin;
-    padding-block: 2.5vmin;
+    text-align: center;
     transition: color 250ms linear, text-shadow 250ms linear;
-}
-
-#name:hover {
-    color: black;
-    text-shadow: 0px 0px 5px white;
-}
-
-.inverted #name {
-    color: black;
-}
-
-.inverted #name:hover {
-    color: white;
-    text-shadow: 0px 0px 5px black;
 }
 
 #social-links {
@@ -40,16 +25,12 @@
 
 #social-links a {
     display: inline-block;
-    border: 1px solid white;
+    height: 10.5vmin;
+    aspect-ratio: 1/1;
+    border: 2px solid var(--theme-color);
     border-radius: 50%;
-    padding: 2.5vmin;
-    height: 11vmin;
+    padding: 2vmin;
     transition: scale 250ms linear;
-    box-shadow: 0px 0px 15px white;
-}
-
-.inverted #social-links a {
-    border: 1px solid black;
 }
 
 #social-links a:hover {
@@ -57,54 +38,40 @@
 }
 
 #social-links img {
+    box-sizing: content-box;
     height: 6vmin;
     aspect-ratio: 1/1;
-}
-
-.inverted #social-links a:hover {
-    box-shadow: 0px 0px 15px black;
 }
 
 .Home p {
     grid-column: span 2;
     width: 75%;
-    text-indent: 5vmin;
+    text-indent: 10vmin;
     text-align: justify;
     line-height: 6vmin;
 }
 
 .Home p::first-letter {
-    font-size: 4vmin;
+    font-size: 3.5vmin;
 }
 
 .Home #btn-container a {
-    display:inline-block;
+    display: inline-block;
     text-decoration: none;
     grid-column: span 2;
     width: max-content;
-    border: 1px solid white;
+    border: 1px solid var(--theme-color);
     border-radius: 1vmin;
-    background-color: white;
-    color: black;
+    color: var(--theme-color);
+    background-color: var(--theme-bg-color);
     padding: 2.5vmin;
     transition: color 250ms linear, background-color 250ms linear, transform 250ms linear;
 }
 
-.inverted .Home #btn-container a {
-    border-color: black;
-    color: white;
-    background-color: black;
-}
-
 .Home #btn-container a:hover {
-    color: white;
-    background-color: black;
+    color: var(--theme-bg-color);
+    background-color: var(--theme-color);
     transform: scale(1.05);
-}
-
-.inverted .Home #btn-container a:hover {
-    color: black;
-    background-color: white;
 }
 
 @media (max-width:1024px) {

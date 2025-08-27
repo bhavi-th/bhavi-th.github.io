@@ -1,5 +1,5 @@
 footer {
-    font-size: 2.5vmin;
+    font-size: 2vmin;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -10,6 +10,7 @@ footer {
 footer div {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 footer ul {

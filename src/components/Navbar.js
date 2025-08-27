@@ -83,17 +83,16 @@ export default function Navbar({ theme, setTheme }) {
                         Contact
                     </li>
                 </a>
-                {/* <div id="theme" title="Click to change the site theme" onClick={toggleTheme}></div> */}
                 <div
-                  id="theme"
-                  title="Click to change the site theme"
-                  onClick={toggleTheme}
+                    id="theme"
+                    title="Click to change the site theme"
+                    onClick={toggleTheme}
                 >
-                  <img
-                    src={theme ? moonIcon : sunIcon}
-                    alt="Theme toggle icon"
-                    className="theme-icon"
-                  />
+                    <img
+                        src={theme ? sunIcon : moonIcon}
+                        alt="Theme toggle icon"
+                        className="theme-icon"
+                    />
                 </div>
             </ul>
         </nav>

@@ -1,34 +1,44 @@
 .Navbar {
     position: fixed;
-    top: 0;
+    top: 2%;
+    left: 2.5%;
     height: 10vmin;
-    width: 100%;
-    padding: 0.5rem;
-    border-bottom: 1px solid white;
-    backdrop-filter: blur(15px);
+    width: 95%;
+    border: 2px solid var(--theme-color);
+    border-radius: 5vmin;
+    backdrop-filter: blur(1vmin);
     display: grid;
     align-items: center;
     justify-content: space-between;
     grid-template-columns: repeat(2, 1fr);
-    color: white;
+    color: var(--theme-color);
+    box-shadow: inset 0px 0px 5px var(--theme-color);
+    z-index: 2;
+}
+
+.Navbar::before {
+    content: "";
+    position: absolute;
+    left: -2.7%;
+    height: 1px;
+    width: 2.6%;
+    background-color: var(--theme-color);
+}
+
+.Navbar::after {
+    content: "";
+    position: absolute;
+    right: -2.7%;
+    height: 1px;
+    width: 2.6%;
+    background-color: var(--theme-color);
 }
 
 #logo {
     margin-left: 1rem;
     font-size: 5vmin;
-    text-shadow: 0px 0px 25px white;
-    animation: flicker 2.5s linear;
-    transition: text-shadow 250ms linear;
-}
-
-#logo:hover,
-#logo:focus {
-    text-shadow: 0px 0px 5px white;
-}
-
-.inverted #logo:hover,
-.inverted #logo:focus {
-    text-shadow: 0px 0px 5px black;
+    color: var(--theme-color);
+    text-shadow: 0px 0px 2px var(--theme-bg-color);
 }
 
 #hamburger {
@@ -42,31 +52,19 @@
 #hamburger * {
     height: .75vmin;
     width: 8vmin;
-    background-color: white;
+    background-color: var(--theme-bg-color);
     transform: skew(15deg);
-    box-shadow: 0px 0px 15px white;
+    box-shadow: 0px 0px 15px var(--theme-bg-color);
 }
 
 .Navbar ul {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.5rem;
     list-style: none;
     width: 100%;
     font-size: 2.5vmin;
-}
-
-#links a {
-    color: inherit;
-    display: block;
-    text-decoration: none;
-    transform: skew(15deg);
-    width: 8vw;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    padding-block: 1.75vmin;
-    transition: background-color 250ms linear, color 250ms linear;
 }
 
 #links li {
@@ -74,14 +72,36 @@
     transform: skew(-15deg);
 }
 
-#links a:focus,
-#links a.active {
-    color: black;
-    background-color: white;
+#links a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    text-shadow: 0px 0px 8px var(--theme-bg-color);
+    transform: skew(15deg);
+    width: 8vw;
+    border-bottom: 2.5px solid transparent;
+    padding-block: 1vmin;
+    transition: text-shadow 250ms linear;
 }
 
-#links a:hover {
-    border: 1px solid white;
+#links a::after {
+    content: "";
+    display: block;
+    height: 0.35vmin;
+    width: 0%;
+    background-color: var(--theme-color);
+    transition: width 250ms linear;
+}
+
+#links a:hover::after,
+#links a:focus::after,
+#links a.active::after {
+    width: 100%;
+}
+
+#theme {
+    display: flex;
+    align-items: center;
 }
 
 #theme img {
@@ -128,46 +148,4 @@
         width: 50%;
     }
 
-}
-
-.inverted {
-    background-color: white;
-    color: black;
-    border-bottom: 1px solid white;
-}
-
-.inverted .Navbar {
-    border-bottom: 1px solid black;
-    color: black;
-}
-
-.inverted #logo {
-    text-shadow: 0px 0px 25px black;
-}
-
-.inverted #hamburger * {
-    background-color: black;
-    box-shadow: 0px 0px 15px black;
-}
-
-.inverted #links a {
-    color: black;
-}
-
-.inverted #links a:focus,
-.inverted #links a.active {
-    color: white;
-    background-color: black;
-}
-
-.inverted #links a:hover {
-    border: 1px solid black;
-}
-
-#scroll-tracker {
-    background-color: white;
-}
-
-.inverted #scroll-tracker {
-    background-color: black;
 }

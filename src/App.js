@@ -3,11 +3,11 @@ import "./App.css"
 import About from "./components/About.js";
 import Home from "./components/Home.js";
 import Navbar from "./components/Navbar.js";
-import ScrollTracker from "./components/ScrollTracker.js";
 import Projects from "./components/Projects.js";
 import Skills from "./components/Skills.js";
 import Contact from "./components/Contact.js";
 import Footer from "./components/Footer.js";
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 
@@ -35,8 +35,8 @@ function App() {
 
   return (
     <div className="App">
+      <Toaster position='top-center' reverseOrder={false} />
       <Navbar theme={theme} setTheme={setTheme} />
-      <ScrollTracker />
       <Home theme={theme} />
       <hr />
       <About />

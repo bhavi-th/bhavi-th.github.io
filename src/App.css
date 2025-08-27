@@ -1,20 +1,25 @@
+:root {
+    --theme-color: black;
+    --theme-bg-color: white;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif, monospace;
-    font-weight:bold;
+    font-weight: bold;
     line-height: 4.5vmin;
 }
 
 *::selection {
-    background-color: white;
-    color: black;
+    background-color: var(--theme-bg-color);
+    color: var(--theme-color);
 }
 
-.inverted *::selection {
-    background-color: black;
-    color: white;
+.inverted {
+    --theme-color: white;
+    --theme-bg-color: black;
 }
 
 html {
@@ -24,9 +29,9 @@ html {
 body {
     position: relative;
     height: 100dvh;
-    background-color: black;
+    background-color: var(--theme-bg-color);
     cursor: default;
-    color: white;
+    color: var(--theme-color);
 }
 
 @keyframes flicker {

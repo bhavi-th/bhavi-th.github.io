@@ -1,5 +1,4 @@
 import "./About.css"
-import Profile from "../assets/profile.jpg";
 import { useState, useEffect } from "react";
 
 function About() {
@@ -13,7 +12,7 @@ function About() {
         <section className="About" id="about">
             <div id="about-card" className="fade-elements">
                 <div id="image-cover">
-                    <img alt="My Profile" src={Profile} />
+                    <img alt="My Profile" src="#" />
                 </div>
                 <span id="name">
                     Bhavith S

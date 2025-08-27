@@ -1,6 +1,15 @@
 .Skills {
     min-height: 100dvh;
     padding-top: 12vmin;
+}
+
+.Skills h2 {
+    text-align: center;
+    font-size: 5vmin;
+    margin-block: 4.5vmin;
+}
+
+.Skills .skills-card-holder {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
