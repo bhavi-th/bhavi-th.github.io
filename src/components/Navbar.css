@@ -36,7 +36,7 @@
 
 #logo {
     margin-left: 1rem;
-    font-size: 5vmin;
+    font-size: 4vmin;
     color: var(--theme-color);
     text-shadow: 0px 0px 2px var(--theme-bg-color);
 }
@@ -47,14 +47,14 @@
     justify-content: center;
     flex-direction: column;
     gap: 1.25vmin;
+    cursor: pointer;
 }
 
 #hamburger * {
     height: .75vmin;
     width: 8vmin;
-    background-color: var(--theme-bg-color);
+    background-color: var(--theme-color);
     transform: skew(15deg);
-    box-shadow: 0px 0px 15px var(--theme-bg-color);
 }
 
 .Navbar ul {
@@ -126,11 +126,15 @@
     .Navbar ul {
         position: absolute;
         top: 12vmin;
+        right: 0;
+        background-color: var(--theme-bg-color);
         grid-column: span 2;
         height: 0px;
-        backdrop-filter: blur(15px);
+        width: 30vmin;
+        border: 2px solid transparent;
+        border-radius: 2vmin;
         overflow: hidden;
-        transition: height 250ms linear;
+        transition: height 500ms linear, border 600ms linear;
     }
 
     #links {
@@ -141,6 +145,7 @@
     }
 
     .Navbar ul.show-links {
+        border-color: var(--theme-color);
         height: 75dvh;
     }
 
@@ -148,4 +153,14 @@
         width: 50%;
     }
 
+    #theme img {
+        height: 5vmin;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .Navbar ul.show-links {
+        height: 50dvh;
+    }
 }

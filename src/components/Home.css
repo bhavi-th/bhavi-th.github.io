@@ -12,7 +12,7 @@
 #name {
     color: var(--theme-color);
     letter-spacing: 0.5vmin;
-    font-size: 10vmin;
+    font-size: 8vmin;
     text-align: center;
     transition: color 250ms linear, text-shadow 250ms linear;
 }
