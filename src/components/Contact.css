@@ -54,7 +54,6 @@
     outline: 2.5px solid var(--theme-color);
 }
 
-.form-inputs,
 .form-inputs {
     display: flex;
     flex-direction: column;
@@ -94,5 +93,16 @@
 
     .Contact p {
         width: 75%;
+    }
+}
+
+@media (max-width: 720px) {
+    .name-email-container {
+        flex-direction: column;
+    }
+
+    .name-email-container .form-inputs {
+        width: 100%;
+        margin-top: 2.5vmin;
     }
 }

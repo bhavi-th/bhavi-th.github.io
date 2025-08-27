@@ -130,11 +130,11 @@
         background-color: var(--theme-bg-color);
         grid-column: span 2;
         height: 0px;
-        width: 30vmin;
-        border: 2px solid transparent;
+        width: 0px;
+        border: 2px solid var(--theme-color);
         border-radius: 2vmin;
         overflow: hidden;
-        transition: height 500ms linear, border 600ms linear;
+        transition: height 500ms linear, width 250ms 500ms linear;
     }
 
     #links {
@@ -145,8 +145,8 @@
     }
 
     .Navbar ul.show-links {
-        border-color: var(--theme-color);
         height: 75dvh;
+        width: 30vmin;
     }
 
     #links a {
