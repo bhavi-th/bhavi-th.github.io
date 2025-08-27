@@ -35,7 +35,6 @@ export default function Navbar({ theme, setTheme }) {
     useEffect(() => {
         const storedTheme = localStorage.getItem("theme");
         if (storedTheme === "white") {
-            document.body.classList.add("inverted");
             setTheme(true);
         }
     }, [setTheme]);

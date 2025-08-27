@@ -126,15 +126,16 @@
     .Navbar ul {
         position: absolute;
         top: 12vmin;
-        right: 0;
+        right: -5vmin;
         background-color: var(--theme-bg-color);
         grid-column: span 2;
         height: 0px;
         width: 0px;
         border: 2px solid var(--theme-color);
-        border-radius: 2vmin;
+        border-top-left-radius: 2vmin;
+        border-bottom-left-radius: 2vmin;
         overflow: hidden;
-        transition: height 500ms linear, width 250ms 500ms linear;
+        transition: height 500ms 250ms linear, width 250ms 750ms linear;
     }
 
     #links {
@@ -145,7 +146,7 @@
     }
 
     .Navbar ul.show-links {
-        height: 75dvh;
+        height: 75vh;
         width: 30vmin;
     }
 
