@@ -88,7 +88,7 @@ export default function Navbar({ theme, setTheme }) {
                     onClick={toggleTheme}
                 >
                     <img
-                        src={theme ? sunIcon : moonIcon}
+                        src={theme ? moonIcon : sunIcon}
                         alt="Theme toggle icon"
                         className="theme-icon"
                     />
