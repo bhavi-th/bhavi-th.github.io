@@ -1,25 +1,32 @@
-import { useState, useEffect } from 'react';
-import "./App.css"
-import About from "./components/About.js";
-import Home from "./components/Home.js";
+import { useState, useEffect } from "react";
+import "./App.css";
+import About from "./pages/About.js";
+import Home from "./pages/Home.js";
 import Navbar from "./components/Navbar.js";
-import Projects from "./components/Projects.js";
-import Skills from "./components/Skills.js";
+import Projects from "./pages/Projects.js";
+import Skills from "./pages/Skills.js";
 import Contact from "./components/Contact.js";
 import Footer from "./components/Footer.js";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 
 function App() {
-
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") === "white"; // Get stored theme
+    return localStorage.getItem("theme") || "white";
   });
 
   useEffect(() => {
-    localStorage.setItem("theme", theme ? "white" : "dark"); // Store theme preference
+    localStorage.setItem("theme", theme); // persist theme
+    const body = document.querySelector("body");
+
+    if (theme !== "white") {
+      body.classList.add("inverted");
+    } else {
+      body.classList.remove("inverted");
+    }
   }, [theme]);
 
   useEffect(() => {
+    // document.querySelector("body").classList.add("inverted");
     const elementsToObserve = document.querySelectorAll(".fade-elements");
 
     const observer = new IntersectionObserver((entries) => {
@@ -35,9 +42,9 @@ function App() {
 
   return (
     <div className="App">
-      <Toaster position='top-center' reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
       <Navbar theme={theme} setTheme={setTheme} />
-      <Home theme={theme} />
+      <Home />
       <hr />
       <About />
       <hr />
@@ -47,7 +54,7 @@ function App() {
       <hr />
       <Contact />
       <hr />
-      <Footer theme={theme} />
+      <Footer />
     </div>
   );
 }
