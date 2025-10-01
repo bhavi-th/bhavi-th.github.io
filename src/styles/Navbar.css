@@ -22,27 +22,12 @@
 }
 
 #logo {
+  cursor: pointer;
   margin-left: 1rem;
   font-size: 4vmin;
   font-weight: bold;
   color: var(--theme-color);
   text-shadow: 0px 0px 2px var(--theme-bg-color);
-}
-
-#hamburger {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1.25vmin;
-  cursor: pointer;
-}
-
-#hamburger * {
-  height: 0.75vmin;
-  width: 8vmin;
-  background-color: var(--theme-color);
-  transform: skew(15deg);
 }
 
 .Navbar ul {
@@ -104,48 +89,32 @@
     height: 8vmin;
   }
 
-  #hamburger {
-    display: flex;
-  }
-
   .Navbar ul {
     position: absolute;
-    top: 12vmin;
+    top: 50dvh;
     right: -5vmin;
+    transform: translateY(-50%);
+    margin-top: 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vmin;
     background-color: var(--theme-bg-color);
-    grid-column: span 2;
     height: 0px;
     width: 0px;
     border: 2px solid var(--theme-color);
     border-top-left-radius: 2vmin;
     border-bottom-left-radius: 2vmin;
     overflow: hidden;
-    transition: height 500ms 250ms linear, width 250ms 750ms linear;
-  }
-
-  #links {
-    margin-top: 0px;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    transition: height 250ms linear, width 250ms 250ms linear;
   }
 
   .Navbar ul.show-links {
-    height: 75vh;
-    width: 30vmin;
-  }
-
-  #links a {
-    width: 50%;
+    padding-block: 2.5vmin;
+    height: 55vmin;
+    width: 25vmin;
   }
 
   #theme img {
     height: 5vmin;
-  }
-}
-
-@media (max-width: 400px) {
-  .Navbar ul.show-links {
-    height: 50dvh;
   }
 }

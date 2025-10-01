@@ -16,12 +16,8 @@
 
 .Skill-card:hover {
   background-color: transparent;
-  box-shadow: 0px 0px 5px 5px var(--theme-color);
-  scale: 1.1;
-}
-
-.inverted .Skill-card:hover {
-  box-shadow: 0px 0px 5px 5px black;
+  box-shadow: 0px 0px 2.5px 2.5px var(--theme-color);
+  scale: 1.05;
 }
 
 .Skill-card img {
@@ -29,14 +25,9 @@
   width: 10vmin;
 }
 
-.inverted .Skill-card #GitHub {
-  background-color: white;
-  border-radius: 50%;
-}
-
 .Skill-card h3 {
   display: inline-block;
-  font-size: 4vmin;
+  font-size: 3.5vmin;
 }
 
 .Skill-card p {

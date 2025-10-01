@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/Home.css";
 
 function Home() {
@@ -10,7 +11,7 @@ function Home() {
         <span id="name">Bhavith S</span>
       </span>
       <div id="btn-container">
-        <a href="#projects">View my work</a>
+        <Link to="/projects">Explore my work</Link>
       </div>
     </section>
   );

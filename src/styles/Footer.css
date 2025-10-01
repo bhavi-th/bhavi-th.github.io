@@ -1,31 +1,8 @@
 footer {
-    font-size: 2vmin;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2.5vmin;
-    padding: 1rem;
-}
-
-footer div {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-footer ul {
-    display: flex;
-    align-items: center;
-    gap: 10vmin;
+  font-size: 2vmin;
+  padding: 1rem;
 }
 
 footer p {
-    text-align: center;
-}
-
-@media (max-width:1024px) {
-    footer div {
-        display: block;
-        text-align: center;
-    }
+  text-align: center;
 }

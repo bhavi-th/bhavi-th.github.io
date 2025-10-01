@@ -55,7 +55,7 @@ export default function Contact() {
         <span>Contact Me</span>
         <div className="name-email-container">
           <div className="form-inputs">
-            <label htmlFor="user_name">Name</label>
+            {/* <label htmlFor="user_name">Name</label> */}
             <input
               type="name"
               name="user_name"
@@ -67,7 +67,7 @@ export default function Contact() {
             />
           </div>
           <div className="form-inputs">
-            <label htmlFor="user_email">Email</label>
+            {/* <label htmlFor="user_email">Email</label> */}
             <input
               type="email"
               name="user_email"
@@ -80,7 +80,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="form-inputs">
-          <label htmlFor="subject">Subject</label>
+          {/* <label htmlFor="subject">Subject</label> */}
           <input
             type="subject"
             name="subject"
@@ -92,7 +92,7 @@ export default function Contact() {
           />
         </div>
         <div className="form-inputs">
-          <label htmlFor="message">Message</label>
+          {/* <label htmlFor="message">Message</label> */}
           <textarea
             name="message"
             cols="50"

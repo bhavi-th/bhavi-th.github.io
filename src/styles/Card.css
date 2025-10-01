@@ -1,83 +1,84 @@
 .Card {
-    width: min-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75vmin;
-    margin: 2.5vmin;
-    padding: 2.5vmin;
-    border: 2.5px solid var(--theme-color);
-    border-radius: 1.5vmin;
-    background-color: transparent;
-    transition: box-shadow 250ms ease-in-out, background-color 250ms ease-in-out;
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75vmin;
+  margin: 2.5vmin;
+  padding: 2.5vmin;
+  border: 2.5px solid var(--theme-color);
+  border-radius: 1.5vmin;
+  background-color: transparent;
+  transition: box-shadow 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 
 .Card:hover {
-    background-color: rgba(100, 255, 255, 0.2);
-    box-shadow: 0px 0px 5px 2px var(--theme-bg-color);
+  background-color: rgba(100, 255, 255, 0.2);
+  box-shadow: 0px 0px 5px 2px var(--theme-bg-color);
 }
 
 .Card img {
-    height: 38vmin;
-    aspect-ratio: 1.5/1;
-    border: 2px solid var(--theme-color);
-    border-radius: 1.5vmin;
-    transition: scale 250ms linear;
+  height: 38vmin;
+  aspect-ratio: 1.5/1;
+  border: 2px solid var(--theme-color);
+  border-radius: 1.5vmin;
+  transition: scale 250ms linear;
 }
 
 .Card:hover img {
-    scale: 1.05;
+  scale: 1.05;
 }
 
 .Card:hover #GitHub {
-    box-sizing: content-box;
-    background-color: var(--theme-bg-color);
-    border-radius: 50%;
+  box-sizing: content-box;
+  background-color: var(--theme-bg-color);
+  border-radius: 50%;
 }
 
 .Card-details {
-    height: 45vmin;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: space-evenly;
+  height: 45vmin;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .Card-details div {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .Card h3 {
-    display: inline-block;
-    font-size: 3vmin;
+  display: inline-block;
+  font-size: 3.5vmin;
 }
 
 .Card p {
-    font-size: 2.25vmin;
-    font-weight: normal;
+  font-size: 2.25vmin;
+  font-weight: normal;
 }
 
 .Card a {
-    text-decoration: none;
-    background-color: var(--theme-bg-color);
-    color: var(--theme-color);
-    padding: 1vmin;
-    font-size: 3vmin;
-    border: 1px solid var(--theme-color);
-    border-radius: .5vmin;
-    cursor: pointer;
-    transition: background-color 250ms linear, color 250ms linear;
+  text-decoration: none;
+  background-color: var(--theme-bg-color);
+  color: var(--theme-color);
+  padding: 1vmin;
+  font-size: 2.25vmin;
+  font-weight: bold;
+  border: 1px solid var(--theme-color);
+  border-radius: 0.5vmin;
+  cursor: pointer;
+  transition: background-color 250ms linear, color 250ms linear;
 }
 
 .Card a:hover {
-    background-color: var(--theme-color);
-    color: var(--theme-bg-color);
+  background-color: var(--theme-color);
+  color: var(--theme-bg-color);
 }
 
-@media (max-width:1024px) {
-    .Card {
-        flex-direction: column;
-    }
+@media (max-width: 1024px) {
+  .Card {
+    flex-direction: column;
+  }
 }
