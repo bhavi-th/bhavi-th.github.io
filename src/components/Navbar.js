@@ -61,22 +61,22 @@ export default function Navbar({ theme, setTheme }) {
         <a href="#contact" className={activeLink === "contact" ? "active" : ""}>
           <li>Contact</li>
         </a>
-        <div
-          id="theme"
-          title="Click to change the site theme"
-          onClick={() => {
-            console.log(theme, " from navbar theme button");
-            setTheme(theme === "white" ? "dark" : "white");
-            console.log(theme, " from navbar theme button");
-          }}
-        >
-          <img
-            src={theme === "dark" ? sunIcon : moonIcon}
-            alt="Theme toggle icon"
-            className="theme-icon"
-          />
-        </div>
       </ul>
+      <div
+        id="theme"
+        title="Click to change the site theme"
+        onClick={() => {
+          console.log(theme, " from navbar theme button");
+          setTheme(theme === "white" ? "dark" : "white");
+          console.log(theme, " from navbar theme button");
+        }}
+      >
+        <img
+          src={theme === "dark" ? sunIcon : moonIcon}
+          alt="Theme toggle icon"
+          className="theme-icon"
+        />
+      </div>
     </nav>
   );
 }

@@ -1,37 +1,43 @@
 .Home {
   padding-top: 16vmin;
   min-height: 100dvh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  display: flex;
   align-items: center;
-  font-size: 3.75vmin;
+  justify-content: space-evenly;
+  flex-direction: column;
   padding-inline: 5vmin;
 }
 
-#name {
+#intro {
   font-family: Arial;
   color: var(--theme-color);
-  /* letter-spacing: 0.5vmin; */
-  line-height: 4rem;
-  font-size: 7.5vmin;
+  line-height: 16vmin;
+  font-size: 16vmin;
+  font-weight: 600;
   text-align: center;
   transition: color 250ms linear, text-shadow 250ms linear;
+  animation: fadeIn 1s ease-out;
 }
 
-.Home p {
+.Home #name {
+  margin-inline: 4.5vmin;
+  transition: color 250ms linear;
+}
+
+.Home #name:hover {
+  color: var(--theme-bg-color);
+  text-shadow: 0px 0px 2.5px var(--theme-color);
+}
+
+.Home #btn-container {
   grid-column: span 2;
-  width: 75%;
-  text-indent: 10vmin;
-  text-align: justify;
-  line-height: 6vmin;
-}
-
-.Home p::first-letter {
-  font-size: 3.5vmin;
+  justify-self: center;
+  animation: fadeIn 1s ease-out;
 }
 
 .Home #btn-container a {
+  font-size: 2.5vmin;
+  font-weight: bold;
   display: inline-block;
   text-decoration: none;
   grid-column: span 2;
@@ -40,7 +46,7 @@
   border-radius: 1vmin;
   color: var(--theme-color);
   background-color: var(--theme-bg-color);
-  padding: 2.5vmin;
+  padding: 1.5vmin;
   transition: color 250ms linear, background-color 250ms linear,
     transform 250ms linear;
 }
@@ -53,14 +59,11 @@
 
 @media (max-width: 1024px) {
   .Home {
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: 1fr;
     word-spacing: 0.25vmin;
-    min-height: 100dvh;
   }
 
-  .Home p {
-    width: 100%;
+  .Home #intro {
+    font-size: 12vmin;
   }
 
   .Home #btn-container {

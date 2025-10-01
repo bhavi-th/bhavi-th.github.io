@@ -1,112 +1,83 @@
 .About {
-    min-height: 100dvh;
-    padding: 2.5vmin;
-    padding-top: 13.5vmin;
-    display: flex;
-    justify-content: space-evenly;
+  min-height: 100dvh;
+  padding: 2.5vmin;
+  padding-top: 13.5vmin;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* About Card */
 
 #about-card {
-    min-width: 20vmin;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 5vmin;
-    padding: 2.5vmin;
-    border-radius: 2.5vmin;
-    box-shadow: 0px 0px 5px 2.5px var(--theme-bg-color);
-}
-
-.About #image-cover {
-    height: 30vmin;
-    width: fit-content;
-    aspect-ratio: 1/1;
-    display: flex;
-    align-items: center;
-    border: 1px solid var(--theme-color);
-    border-radius: 50%;
-    box-shadow: 0px 0px 5px 5px var(--theme-color);
-    overflow: hidden;
-    transition: box-shadow 250ms linear;
-}
-
-.About #image-cover:hover {
-    box-shadow: 0px 0px 20px 10px var(--theme-bg-color);
-}
-
-.About img {
-    height: 55vmin;
-}
-
-.About #name {
-    font-size: 5vmin;
+  min-width: 20vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5vmin;
+  padding: 2.5vmin;
+  border-radius: 2.5vmin;
+  box-shadow: 0px 0px 5px 2.5px var(--theme-bg-color);
 }
 
 .About p {
-    font-size: 3vmin;
-    font-weight: normal;
-    text-indent: 10vmin;
-    text-align: justify;
+  font-size: 2.5vmin;
+  font-weight: normal;
+  text-indent: 10vmin;
+  text-align: justify;
 }
 
 #resume {
-    text-decoration: none;
-    margin: 2.5vmin;
-    margin-bottom: 0px;
-    padding: 2vmin;
-    font-size: 2.5vmin;
-    color: var(--theme-color);
-    background-color: var(--theme-bg-color);
-    border-radius: 0.5vmin;
-    transition: background-color 250ms linear, color 250ms linear;
+  text-decoration: none;
+  margin: 2.5vmin;
+  margin-bottom: 0px;
+  padding: 2vmin;
+  font-size: 2.5vmin;
+  color: var(--theme-color);
+  background-color: var(--theme-bg-color);
+  border-radius: 0.5vmin;
+  transition: background-color 250ms linear, color 250ms linear;
 }
 
 #resume:hover {
-    box-shadow: 0px 0px 10px var(--theme-bg-color);
-    background-color: var(--theme-bg-color);
-    color: var(--theme-color);
+  box-shadow: 0px 0px 10px var(--theme-bg-color);
+  background-color: var(--theme-bg-color);
+  color: var(--theme-color);
 }
 
 /* About */
 
 #about-details {
-    padding: 0.5vmin 10vmin;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    text-align: justify;
+  padding: 0.5vmin 10vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: justify;
 }
 
 #about-details span {
-    font-size: 4.5vmin;
+  font-size: 4vmin;
+  font-weight: bold;
 }
 
 #about-intro,
 #about-skills {
-    font-size: 3vmin;
+  font-size: 2.5vmin;
 }
 
-.fade-in {
-    animation: fadeIn 1s ease-out;
-    opacity: 1;
-}
+@media (max-width: 1024px) {
+  .About {
+    align-items: center;
+    flex-direction: column;
+    gap: 5vmin;
+  }
 
-@media (max-width:1024px) {
-    .About {
-        align-items: center;
-        flex-direction: column;
-        gap: 5vmin;
-    }
+  #about-card {
+    width: 75%;
+    gap: 5vmin;
+  }
 
-    #about-card {
-        width: 75%;
-        gap: 5vmin;
-    }
-
-    #about-details {
-        gap: 5vmin;
-    }
+  #about-details {
+    gap: 5vmin;
+  }
 }
