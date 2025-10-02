@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import About from "./pages/About.js";
-import Home from "./pages/Home.js";
-import Navbar from "./components/Navbar.js";
-import Projects from "./pages/Projects.js";
-import Skills from "./pages/Skills.js";
-import Contact from "./pages/Contact.js";
-import Footer from "./components/Footer.js";
+import About from "./pages/About.jsx";
+import Home from "./pages/Home.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Projects from "./pages/Projects.jsx";
+import Skills from "./pages/Skills.jsx";
+import Contact from "./pages/Contact.jsx";
+import Footer from "./components/Footer.jsx";
 import { Toaster } from "react-hot-toast";
 import { Routes, Route } from "react-router-dom";
+import Cursor from "./components/Cursor.jsx";
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -44,6 +45,7 @@ function App() {
   return (
     <div className="App">
       <Toaster position="top-center" reverseOrder={false} />
+      <Cursor />
       <Navbar theme={theme} setTheme={setTheme} />
       <Routes>
         <Route path="/" element={<Home />} />

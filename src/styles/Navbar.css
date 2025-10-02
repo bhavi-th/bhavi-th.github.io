@@ -1,7 +1,6 @@
 .Navbar {
   position: fixed;
   left: 2.5%;
-  /* height: 3.5rem; */
   height: 12vmin;
   width: 95%;
   backdrop-filter: blur(1vmin);
@@ -80,28 +79,29 @@
 }
 
 #theme img {
-  height: 4dvh;
+  height: 4.5vmin;
   aspect-ratio: 1/1;
   border-radius: 50%;
   margin-inline: 2.5dvw;
   filter: invert(1);
   cursor: pointer;
+  transition: all 250ms linear;
 }
 
 ul #theme {
   display: none;
 }
 
-@media screen and (max-width: 1024px) {
-  .Navbar {
-    /* top: 2.5%; */
-    padding: 0px;
-    /* height: 8vmin; */
-    justify-content: space-between;
-  }
-
+@media screen and (max-width: 540px) {
   #logo {
-    font-size: var(--large-font-size);
+    font-size: 6vmin;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .Navbar {
+    padding: 0px;
+    justify-content: space-between;
   }
 
   .Navbar ul {
@@ -114,19 +114,22 @@ ul #theme {
     align-items: center;
     gap: 5vmin;
     background-color: var(--theme-bg-color);
-    height: 0px;
+    height: 70vmin;
     width: 0px;
+    padding-block: 2.5vmin;
     border: 2px solid var(--theme-color);
     border-top-left-radius: 2vmin;
     border-bottom-left-radius: 2vmin;
     overflow: hidden;
-    transition: height 250ms linear, width 250ms 250ms linear;
+    transition: width 250ms linear;
   }
 
   .Navbar ul.show-links {
-    padding-block: 2.5vmin;
-    height: 64vmin;
     width: 25vmin;
+  }
+
+  #links a {
+    font-size: 3.5vmin;
   }
 
   #hamburger {
@@ -134,11 +137,9 @@ ul #theme {
     flex-direction: column;
     justify-content: space-evenly;
     gap: 1vmin;
-    height: 5.5vmin;
-    /* width: 5vmin; */
+    height: 8vmin;
     aspect-ratio: 1/1;
     margin-right: 5vmin;
-    cursor: pointer;
   }
 
   #hamburger * {
@@ -147,21 +148,14 @@ ul #theme {
     width: 100%;
     border-radius: 0.5vmin;
     transition: transform 500ms linear, width 500ms linear;
-    /* transform-origin: center; */
   }
-
-  /* #hamburger.active {
-    gap: 0;
-    justify-content: center;
-    align-items: center;
-  } */
 
   .active * {
     transform-origin: center;
   }
 
   .active #ham-beg {
-    transform: rotate(45deg) translateX(50%);
+    transform: rotate(45deg) translateX(46%);
   }
 
   #ham-mid {
@@ -174,7 +168,7 @@ ul #theme {
   }
 
   .active #ham-end {
-    transform: rotate(-45deg) translateX(50%);
+    transform: rotate(-45deg) translateX(46%);
   }
 
   ul #theme {
@@ -186,6 +180,6 @@ ul #theme {
   }
 
   #theme img {
-    height: 5vmin;
+    height: 8vmin;
   }
 }

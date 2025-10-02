@@ -10,7 +10,7 @@
 
 .Contact p {
   padding: 2.5vmin;
-  font-size: 2.75vmin;
+  font-size: 3.5vmin;
   text-indent: 5vmin;
 }
 
@@ -19,8 +19,6 @@
 }
 
 .Contact form {
-  /* margin-top: 1vmin; */
-  /* width: 50%; */
   padding: 2.5vmin;
   border: 2.5px solid var(--theme-color);
   border-radius: 2.5vmin;
@@ -31,7 +29,6 @@
 .Contact span {
   text-align: center;
   font-size: 3.5vmin;
-  /* margin-block: 2.5vmin; */
   font-weight: bold;
 }
 
