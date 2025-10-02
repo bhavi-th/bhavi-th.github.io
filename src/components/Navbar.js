@@ -14,8 +14,11 @@ export default function Navbar({ theme, setTheme }) {
 
   return (
     <nav className="Navbar">
-      <div id="logo" onClick={toggleMenu}>
-        &lt;bhavi-th/&gt;
+      <div id="logo">&lt;bhavi-th/&gt;</div>
+      <div id="hamburger" onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
       <ul id="links" className={hamClicked ? "show-links" : ""}>
         <li>
@@ -33,6 +36,21 @@ export default function Navbar({ theme, setTheme }) {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+        <div
+          id="theme"
+          title="Click to change the site theme"
+          onClick={() => {
+            console.log(theme, " from navbar theme button");
+            setTheme(theme === "white" ? "dark" : "white");
+            console.log(theme, " from navbar theme button");
+          }}
+        >
+          <img
+            src={theme === "dark" ? sunIcon : moonIcon}
+            alt="Theme toggle icon"
+            className="theme-icon"
+          />
+        </div>
       </ul>
       <div
         id="theme"

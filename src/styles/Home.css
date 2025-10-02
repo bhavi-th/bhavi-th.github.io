@@ -1,6 +1,6 @@
 .Home {
-  padding-top: 16vmin;
-  min-height: 100dvh;
+  padding-top: var(--top-padding);
+  min-height: calc(100dvh - 4.5vmin);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -36,7 +36,7 @@
 }
 
 .Home #btn-container a {
-  font-size: 2.5vmin;
+  font-size: var(--medium-font-size);
   font-weight: bold;
   display: inline-block;
   text-decoration: none;

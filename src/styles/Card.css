@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75vmin;
+  gap: 2vmin;
   margin: 2.5vmin;
   padding: 2.5vmin;
   border: 2.5px solid var(--theme-color);
@@ -29,18 +29,12 @@
   scale: 1.05;
 }
 
-.Card:hover #GitHub {
-  box-sizing: content-box;
-  background-color: var(--theme-bg-color);
-  border-radius: 50%;
-}
-
 .Card-details {
-  height: 45vmin;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-evenly;
+  gap: 0.75vmin;
 }
 
 .Card-details div {
@@ -55,7 +49,7 @@
 }
 
 .Card p {
-  font-size: 2.25vmin;
+  font-size: calc(var(--medium-font-size) - 0.25vmin);
   font-weight: normal;
 }
 
@@ -63,8 +57,9 @@
   text-decoration: none;
   background-color: var(--theme-bg-color);
   color: var(--theme-color);
+  /* margin-top: 1.5vmin; */
   padding: 1vmin;
-  font-size: 2.25vmin;
+  font-size: calc(var(--medium-font-size) - 0.5vmin);
   font-weight: bold;
   border: 1px solid var(--theme-color);
   border-radius: 0.5vmin;

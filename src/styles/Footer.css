@@ -1,6 +1,5 @@
 footer {
-  font-size: 2vmin;
-  padding: 1rem;
+  font-size: calc(var(--medium-font-size) - 0.5vmin);
 }
 
 footer p {

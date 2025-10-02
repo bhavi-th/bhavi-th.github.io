@@ -1,7 +1,8 @@
 .Navbar {
   position: fixed;
   left: 2.5%;
-  height: 3.5rem;
+  /* height: 3.5rem; */
+  height: 12vmin;
   width: 95%;
   backdrop-filter: blur(1vmin);
   display: flex;
@@ -24,10 +25,14 @@
 #logo {
   cursor: pointer;
   margin-left: 1rem;
-  font-size: 4vmin;
+  font-size: var(--large-font-size);
   font-weight: bold;
   color: var(--theme-color);
   text-shadow: 0px 0px 2px var(--theme-bg-color);
+}
+
+#hamburger {
+  display: none;
 }
 
 .Navbar ul {
@@ -43,7 +48,7 @@
 }
 
 #links a {
-  font-size: 2vmin;
+  font-size: var(--medium-font-size);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,10 +88,20 @@
   cursor: pointer;
 }
 
+ul #theme {
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
   .Navbar {
+    /* top: 2.5%; */
     padding: 0px;
-    height: 8vmin;
+    /* height: 8vmin; */
+    justify-content: space-between;
+  }
+
+  #logo {
+    font-size: 5.5vmin;
   }
 
   .Navbar ul {
@@ -110,8 +125,32 @@
 
   .Navbar ul.show-links {
     padding-block: 2.5vmin;
-    height: 55vmin;
+    height: 64vmin;
     width: 25vmin;
+  }
+
+  #hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 8vmin;
+    aspect-ratio: 1/1;
+    margin-right: 5vmin;
+  }
+
+  #hamburger * {
+    background-color: var(--theme-color);
+    height: 0.75vmin;
+    width: 100%;
+    border-radius: 0.5vmin;
+  }
+
+  ul #theme {
+    display: flex;
+  }
+
+  #theme {
+    display: none;
   }
 
   #theme img {

@@ -1,12 +1,11 @@
 .Contact {
-  height: calc((100dvh - 4.5rem) - 2.5vmin);
-  padding-top: 12vmin;
+  min-height: calc(100dvh - 4.5vmin);
+  padding-top: var(--top-padding);
   padding-inline: 4vmin;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   gap: 2.5vmin;
-  margin-bottom: 2.5vmin;
 }
 
 .Contact p {
@@ -16,7 +15,7 @@
 }
 
 .Contact p::first-letter {
-  font-size: 4.25vmin;
+  font-size: var(--large-font-size);
 }
 
 .Contact form {
@@ -41,7 +40,7 @@
 .Contact button {
   padding: 0.25rem;
   padding-left: 1vmin;
-  font-size: 2.25vmin;
+  font-size: var(--medium-font-size);
   font-weight: normal;
   outline: none;
   background-color: var(--theme-bg-color);

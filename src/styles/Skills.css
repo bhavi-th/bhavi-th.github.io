@@ -1,12 +1,12 @@
 .Skills {
   min-height: 100dvh;
-  padding-top: 12vmin;
+  padding-top: var(--top-padding);
 }
 
 .Skills h2 {
   text-align: center;
-  font-size: 4vmin;
-  margin-block: 4.5vmin;
+  font-size: var(--large-font-size);
+  margin-bottom: 4.5vmin;
 }
 
 .Skills .skills-card-holder {

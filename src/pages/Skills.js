@@ -2,7 +2,7 @@ import "../styles/Skills.css";
 import SkillCard from "../components/SkillCard";
 import ReactJS from "../assets/skills/react.svg";
 import Git from "../assets/skills/git.svg";
-import GitHub from "../assets/icon/github-inverted.svg";
+import GitHub from "../assets/icon/github.svg";
 import C from "../assets/skills/c.svg";
 import Cpp from "../assets/skills/cpp.svg";
 import HTML5 from "../assets/skills/html.svg";

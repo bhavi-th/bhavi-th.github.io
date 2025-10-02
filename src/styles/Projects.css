@@ -1,11 +1,11 @@
 .Projects {
   min-height: 100dvh;
-  padding-top: 16vmin;
+  padding-top: var(--top-padding);
 }
 
 .Projects h2 {
   text-align: center;
-  font-size: 4vmin;
+  font-size: var(--large-font-size);
   margin-bottom: 5vmin;
 }
 
