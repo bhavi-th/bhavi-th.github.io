@@ -1,8 +1,8 @@
 :root {
   --theme-color: black;
   --theme-bg-color: white;
-  --large-font-size: 4vmin;
-  --medium-font-size: 2.5vmin;
+  --large-font-size: 3.5vmin;
+  --medium-font-size: 2vmin;
   --top-padding: 16vmin;
 }
 
@@ -54,9 +54,9 @@ section * {
   }
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   :root {
-    --large-font-size: 6vmin;
-    --medium-font-size: 3vmin;
+    --large-font-size: 4.5vmin;
+    --medium-font-size: 2.5vmin;
   }
-}
+} */

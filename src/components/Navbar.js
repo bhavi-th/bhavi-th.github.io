@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import sunIcon from "../assets/sun.png";
@@ -6,19 +6,20 @@ import moonIcon from "../assets/moon.png";
 
 export default function Navbar({ theme, setTheme }) {
   const [hamClicked, setHamClicked] = useState(false);
+  const hamburger = useRef();
 
   const toggleMenu = (ele) => {
-    ele.target.className = !hamClicked ? "active" : "";
+    hamburger.current.className = !hamClicked ? "active" : "";
     setHamClicked((prev) => !prev);
   };
 
   return (
     <nav className="Navbar">
       <div id="logo">&lt;bhavi-th/&gt;</div>
-      <div id="hamburger" onClick={toggleMenu}>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div id="hamburger" ref={hamburger} onClick={toggleMenu}>
+        <div id="ham-beg"></div>
+        <div id="ham-mid"></div>
+        <div id="ham-end"></div>
       </div>
       <ul id="links" className={hamClicked ? "show-links" : ""}>
         <li>

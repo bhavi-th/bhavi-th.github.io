@@ -101,7 +101,7 @@ ul #theme {
   }
 
   #logo {
-    font-size: 5.5vmin;
+    font-size: var(--large-font-size);
   }
 
   .Navbar ul {
@@ -133,16 +133,48 @@ ul #theme {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 8vmin;
+    gap: 1vmin;
+    height: 5.5vmin;
+    /* width: 5vmin; */
     aspect-ratio: 1/1;
     margin-right: 5vmin;
+    cursor: pointer;
   }
 
   #hamburger * {
     background-color: var(--theme-color);
-    height: 0.75vmin;
+    height: 0.5vmin;
     width: 100%;
     border-radius: 0.5vmin;
+    transition: transform 500ms linear, width 500ms linear;
+    /* transform-origin: center; */
+  }
+
+  /* #hamburger.active {
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  .active * {
+    transform-origin: center;
+  }
+
+  .active #ham-beg {
+    transform: rotate(45deg) translateX(50%);
+  }
+
+  #ham-mid {
+    width: 65%;
+    margin-left: 17.5%;
+  }
+
+  .active #ham-mid {
+    width: 0%;
+  }
+
+  .active #ham-end {
+    transform: rotate(-45deg) translateX(50%);
   }
 
   ul #theme {

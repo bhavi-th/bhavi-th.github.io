@@ -35,7 +35,7 @@
 }
 
 .Skill-card p {
-  font-size: calc(var(--medium-font-size) - 0.25vmin);
+  font-size: var(--medium-font-size);
   font-weight: normal;
   text-indent: 3.5vmin;
   text-align: center;
