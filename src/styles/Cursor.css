@@ -1,14 +1,19 @@
 .inversion-cursor {
   position: fixed;
-  width: 15vmin;
-  height: 15vmin;
+  height: 10vmin;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   pointer-events: none;
   mix-blend-mode: difference;
   background: white;
   box-shadow: 0px 0px 5vmin white;
   z-index: 9999;
-  transition: transform 0.05s ease-out;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.5s ease-out;
+}
+
+.inversion-cursor.shrink {
+  transform: translate(-50%, -50%) scale(0.25);
 }
 
 @media (max-width: 1024px) {

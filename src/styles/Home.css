@@ -1,4 +1,4 @@
-.Home {
+#landing-page {
   padding-top: var(--top-padding);
   min-height: calc(100dvh - 4.5vmin);
   display: flex;
@@ -19,23 +19,23 @@
   animation: fadeIn 1s ease-out;
 }
 
-.Home #name {
+#landing-page #name {
   margin-inline: 4.5vmin;
   transition: color 250ms linear;
 }
 
-.Home #name:hover {
+#landing-page #name:hover {
   color: var(--theme-bg-color);
   text-shadow: 0px 0px 2.5px var(--theme-color);
 }
 
-.Home #btn-container {
+#landing-page #btn-container {
   grid-column: span 2;
   justify-self: center;
   animation: fadeIn 1s ease-out;
 }
 
-.Home #btn-container a {
+#landing-page #btn-container a {
   font-size: var(--medium-font-size);
   font-weight: bold;
   display: inline-block;
@@ -51,22 +51,22 @@
     transform 250ms linear;
 }
 
-.Home #btn-container a:hover {
+#landing-page #btn-container a:hover {
   color: var(--theme-bg-color);
   background-color: var(--theme-color);
   transform: scale(1.05);
 }
 
 @media (max-width: 1024px) {
-  .Home {
+  #landing-page {
     word-spacing: 0.25vmin;
   }
 
-  .Home #intro {
+  #landing-page #intro {
     font-size: 12vmin;
   }
 
-  .Home #btn-container {
+  #landing-page #btn-container {
     display: flex;
     align-items: center;
     justify-content: center;

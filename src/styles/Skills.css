@@ -1,16 +1,22 @@
 .Skills {
-  min-height: 100dvh;
+  padding: 6vmin 4vmin;
   padding-top: var(--top-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Skills h2 {
-  text-align: center;
   font-size: var(--large-font-size);
-  margin-bottom: 4.5vmin;
+  margin-bottom: 5vmin;
+  color: var(--theme-color);
+  letter-spacing: 0.05em;
 }
 
-.Skills .skills-card-holder {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.skills-card-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3vmin;
+  width: 100%;
+  max-width: 1975px;
 }

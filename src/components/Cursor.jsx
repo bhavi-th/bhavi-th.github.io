@@ -1,22 +1,35 @@
-import { useEffect, useState } from 'react';
-import '../styles/Cursor.css'; // External CSS for styling
+import { useEffect, useState } from "react";
+import "../styles/Cursor.css"; // External CSS for styling
 
 const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
     const move = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener('mousemove', move);
-    return () => window.removeEventListener('mousemove', move);
+
+    const handleClick = () => {
+      setClicked(true);
+      setTimeout(() => setClicked(false), 150); // Reset after 250ms
+    };
+
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mousedown", handleClick);
+
+    return () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mousedown", handleClick);
+    };
   }, []);
 
   return (
     <div
-      className="inversion-cursor"
+      className={`inversion-cursor ${clicked ? "shrink" : ""}`}
       style={{
-        transform: `translate(${position.x - 50}px, ${position.y - 50}px)`
+        left: `${position.x}px`,
+        top: `${position.y}px`,
       }}
     />
   );

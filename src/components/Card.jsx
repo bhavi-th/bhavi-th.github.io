@@ -7,12 +7,12 @@ const Card = ({ skillName, description, icon, link, codeLink }) => {
         id={skillName}
         src={icon}
         alt={`${skillName} logo`}
-        className="skill-icon"
+        className="project-image"
       />
       <div className="Card-details">
         <h3>{skillName}</h3>
         <p>{description}</p>
-        <div>
+        <div className="Card-links">
           <a href={link} alt="Project link" target="_blank" rel="noreferrer">
             Visit Project
           </a>

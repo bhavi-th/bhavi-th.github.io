@@ -9,8 +9,16 @@
   margin-bottom: 5vmin;
 }
 
-.Projects .cards-container {
+/* .Projects .cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+} */
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 4vmin;
+  width: 100%;
+  max-width: 1200px;
 }

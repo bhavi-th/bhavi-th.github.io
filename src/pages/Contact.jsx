@@ -59,7 +59,7 @@ export default function Contact() {
             <input
               type="name"
               name="user_name"
-              placeholder="Your name"
+              placeholder="Name"
               value={formData.fullName}
               onChange={(e) =>
                 setFormData({ ...formData, fullName: e.target.value })
@@ -71,7 +71,7 @@ export default function Contact() {
             <input
               type="email"
               name="user_email"
-              placeholder="your_email@example.com"
+              placeholder="Email"
               value={formData.email}
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
@@ -84,7 +84,7 @@ export default function Contact() {
           <input
             type="subject"
             name="subject"
-            placeholder="What's this about"
+            placeholder="Subject"
             value={formData.subject}
             onChange={(e) =>
               setFormData({ ...formData, subject: e.target.value })

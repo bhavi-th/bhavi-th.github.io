@@ -1,4 +1,4 @@
-.Card {
+/* .Card {
   width: min-content;
   display: flex;
   flex-direction: column;
@@ -57,7 +57,6 @@
   text-decoration: none;
   background-color: var(--theme-bg-color);
   color: var(--theme-color);
-  /* margin-top: 1.5vmin; */
   padding: 1vmin;
   font-size: calc(var(--medium-font-size) - 0.5vmin);
   font-weight: bold;
@@ -76,4 +75,86 @@
   .Card {
     flex-direction: column;
   }
+} */
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 340px;
+  width: 100%;
+  margin: auto;
+  background-color: var(--theme-color);
+  color: var(--theme-bg-color);
+  border: 1px solid var(--theme-color);
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  /* box-shadow: 0 4px 12px var(--theme-color); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px var(--theme-color);
+}
+
+.project-image {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--theme-color);
+  transition: transform 0.3s ease;
+}
+
+.Card:hover .project-image {
+  transform: scale(1.015);
+}
+
+.Card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  text-align: center;
+}
+
+.Card h3 {
+  font-size: 1.4rem;
+  margin: 0;
+  /* color: var(--theme-bg-color); */
+  letter-spacing: 0.03em;
+}
+
+.Card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  padding: 0 0.5rem;
+}
+
+.Card-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.Card a {
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: 2.5px solid var(--theme-bg-color);
+  background-color: var(--theme-bg-color);
+  color: var(--theme-color);
+  transition: all 0.25s ease;
+}
+
+.Card a:hover {
+  background-color: var(--theme-color);
+  color: var(--theme-bg-color);
 }
