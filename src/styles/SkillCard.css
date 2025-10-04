@@ -1,12 +1,13 @@
 .Skill-card {
   display: block;
-  max-width: 80vmin;
+  max-width: 60vmin;
+  max-height: 60vmin;
   text-decoration: none;
-  color: var(--theme-bg-color);
-  background: var(--theme-color);
-  border: 1px solid var(--theme-bg-color);
-  border-radius: 1.25rem;
-  padding: 2rem;
+  color: var(--theme-color);
+  background: var(--theme-bg-color);
+  border: 2.5px solid var(--theme-color);
+  border-radius: 3.5vmin;
+  padding: 2.5vmin;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 0 transparent;
@@ -18,14 +19,13 @@
 }
 
 .Skill-card img {
-  height: 64px;
-  width: 64px;
+  height: 8vmin;
   margin-bottom: 1rem;
 }
 
 .Skill-card h3 {
   font-size: calc(var(--large-font-size) - 0.75vmin);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1vmin;
 }
 
 .Skill-card p {

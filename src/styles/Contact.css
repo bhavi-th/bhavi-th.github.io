@@ -20,7 +20,7 @@
 
 .Contact form {
   padding: 2.5vmin;
-  border: 1px solid var(--theme-color);
+  border: 2.5px solid var(--theme-color);
   border-radius: 2.5vmin;
   display: grid;
   gap: 2.5vmin;
@@ -42,7 +42,7 @@
   outline: none;
   background-color: var(--theme-bg-color);
   color: var(--theme-color);
-  border: 1px solid var(--theme-color);
+  border: 2.5px solid var(--theme-color);
   border-radius: 1vmin;
 }
 
