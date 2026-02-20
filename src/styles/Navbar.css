@@ -6,14 +6,14 @@
   justify-content: center;
 }
 
-.Navbar::after {
+/* .Navbar::after {
   content: "";
   position: absolute;
   bottom: 0;
   height: 0.25vmin;
   width: 90vmin;
   background-color: white;
-}
+} */
 
 .Navbar ul {
   list-style: none;
@@ -45,6 +45,7 @@
   color: white;
   text-align: center;
   transition: font-bold 250ms linear;
+  text-shadow: 0px 0px 0.5vmin white;
 }
 
 .Navbar a:hover {
