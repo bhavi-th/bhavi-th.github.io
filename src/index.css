@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "RobotoMono";
+  font-size: 2.75vmin;
+  word-spacing: -0.25rem;
+}
+
+@font-face {
+  font-family: "RobotoMono";
+  src: url("./fonts/RobotoMono.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
