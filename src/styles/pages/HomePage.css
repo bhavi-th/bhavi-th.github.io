@@ -1,0 +1,142 @@
+.hero-main {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  overflow: hidden;
+}
+
+.hero-info {
+  position: absolute;
+  top: 18vh;
+  text-align: center;
+  pointer-events: none;
+  background: transparent;
+  mix-blend-mode: difference;
+}
+
+.event-horizon-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70vmin;
+  margin: 0 auto;
+  font-size: 15vmin;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  transform: scaleY(1.1);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-main:hover .event-horizon-text {
+  width: 95vmin;
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.5rem;
+  margin-block: 40vmin 8vmin;
+}
+
+.mouse-photon {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: white;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  box-shadow:
+    0 0 20px 2px white,
+    0 0 40px 10px rgba(255, 255, 255, 0.3);
+  transition: transform 0.1s ease-out;
+  transform: translate(-50%, -50%);
+}
+
+.explore-btn {
+  pointer-events: all;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 1rem 2rem;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.explore-btn:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 0 30px white;
+}
+
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: black;
+  overflow: hidden;
+}
+
+.star-field::before,
+.star-field::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow:
+    10vw 20vh #fff,
+    25vw 45vh #fff,
+    40vw 10vh #fff,
+    55vw 80vh #fff,
+    70vw 30vh #fff,
+    85vw 60vh #fff,
+    15vw 90vh #fff,
+    35vw 25vh #fff,
+    60vw 15vh #fff,
+    90vw 10vh #fff,
+    5vw 50vh #fff,
+    50vw 50vh #fff;
+  border-radius: 50%;
+}
+
+.star-field::after {
+  width: 2px;
+  height: 2px;
+  opacity: 0.4;
+  animation: twinkle 5s infinite ease-in-out;
+  box-shadow:
+    12vw 15vh #fff,
+    30vw 35vh #fff,
+    48vw 85vh #fff,
+    65vw 55vh #fff,
+    80vw 20vh #fff,
+    95vw 75vh #fff,
+    5vw 5vh #fff,
+    20vw 80vh #fff,
+    50vw 10vh #fff;
+  filter: blur(1px);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
