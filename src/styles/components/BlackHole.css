@@ -1,72 +1,184 @@
-.black-hole-container {
-  height: 100%;
-  width: 100%;
+/* ROOT AND WRAPPERS */
+.sandbox-root {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle, #050505 0%, #000 100%);
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+.black-hole-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
 }
 
 #event-horizon {
-  height: 28vmin;
+  position: absolute;
+  height: 25vmin;
   aspect-ratio: 1/1;
-  background: #000;
+  background: radial-gradient(circle at 30% 30%, #151515 0%, #000 75%);
   border-radius: 50%;
-  box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.9);
+  box-shadow:
+    inset -10px -10px 30px rgba(255, 255, 255, 0.1),
+    0 0 50px rgba(0, 0, 0, 1);
 }
 
-#gravitational-lens {
+.accretion-disk {
   position: absolute;
-  height: 32vmin;
+  height: 100vmin;
   aspect-ratio: 1/1;
-  border-radius: 50%;
-  border: 6vmin solid rgba(255, 255, 255, 0.9);
-  filter: blur(15px);
-  box-shadow:
-    inset 0 0 50px white,
-    0 0 50px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transform-style: preserve-3d;
 }
 
-#accretion-disk {
-  position: absolute;
-  width: 80vmin;
-  height: 1.5vmin;
-  background: white;
-  border-radius: 50%;
-  transform: rotate(-2deg);
-  box-shadow:
-    0 0 10px #fff,
-    0 0 30px rgba(255, 255, 255, 0.6),
-    0 0 70px rgba(255, 255, 255, 0.2);
+.accretion-disk.back {
+  clip-path: inset(0 0 49.98% 0);
+}
 
+.accretion-disk.front {
+  clip-path: inset(49.9% 0 0 0);
+}
+
+.accretion-disk::before {
+  content: "";
+  position: absolute;
+  height: 30vmin;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 15vmin solid rgb(255, 255, 255);
+  box-shadow:
+    0 0 20px #fff,
+    0 0 40px rgb(255, 255, 255),
+    inset 0 0 20px #fff;
+  filter: blur(10px);
+}
+
+.accretion-disk::after {
+  content: "";
+  position: absolute;
+  height: 60vmin;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 7vmin solid rgba(255, 255, 255, 0.15);
+  filter: blur(30px);
+}
+
+.gravitational-lens-layer {
+  position: absolute;
+  height: 26vmin;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  border: 8vmin solid rgb(255, 255, 255);
   filter: blur(1px);
 }
 
-#accretion-disk::before {
+.gravitational-lens-layer::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 105%;
-  height: 300%;
-  background: radial-gradient(
-    ellipse,
-    rgba(255, 255, 255, 0.15) 0%,
-    transparent 70%
-  );
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  border: 8vmin solid rgba(255, 255, 255, 0.6);
   filter: blur(10px);
 }
 
-.black-hole-container::after {
+.gravitational-lens-layer::after {
   content: "";
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  border-radius: 50%;
+  border: 5vmin solid rgba(255, 255, 255, 0.2);
+  filter: blur(25px);
+}
+
+.mouse-photon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+  transition:
+    transform 0.1s ease-out,
+    opacity 0.1s linear;
+}
+
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.2) 0%,
-    transparent 70%
-  );
-  pointer-events: none;
+  background: black;
+  overflow: hidden;
+}
+
+.star-field::before,
+.star-field::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  animation: twinkle 3s infinite ease-in-out;
+  box-shadow:
+    10vw 20vh #fff,
+    25vw 45vh #fff,
+    40vw 10vh #fff,
+    55vw 80vh #fff,
+    70vw 30vh #fff,
+    85vw 60vh #fff,
+    15vw 90vh #fff,
+    35vw 25vh #fff,
+    60vw 15vh #fff,
+    90vw 10vh #fff,
+    5vw 50vh #fff,
+    50vw 50vh #fff;
+  border-radius: 50%;
+}
+
+.star-field::after {
+  animation: twinkle 2s 1s infinite ease-in-out;
+  box-shadow:
+    12vw 15vh #fff,
+    30vw 35vh #fff,
+    48vw 85vh #fff,
+    65vw 55vh #fff,
+    80vw 20vh #fff,
+    95vw 75vh #fff,
+    5vw 5vh #fff,
+    20vw 80vh #fff,
+    50vw 10vh #fff;
+  filter: blur(1px);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
