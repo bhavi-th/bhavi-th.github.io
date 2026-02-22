@@ -70,8 +70,8 @@ const BlackHole = () => {
       <div
         className="mouse-photon"
         style={{
-          left: `${mousePos.x - 10}px`,
-          top: `${mousePos.y - 10}px`,
+          left: `${mousePos.x - 24}px`,
+          top: `${mousePos.y - 24}px`,
           transform: `translate(-50%, -50%) scale(${scale})`,
           opacity: scale > 0.1 ? 1 : 0,
         }}

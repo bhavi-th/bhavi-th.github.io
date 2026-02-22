@@ -53,3 +53,9 @@
 .nav-link:hover::after {
   width: 100%;
 }
+
+@media (max-width: 720px) {
+  .nav-link {
+    font-size: 3vmin;
+  }
+}

@@ -14,3 +14,9 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+@media (max-width: 720px) {
+  body {
+    font-size: 2.75vmin;
+  }
+}

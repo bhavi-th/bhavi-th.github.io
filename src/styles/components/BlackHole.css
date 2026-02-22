@@ -1,8 +1,7 @@
-/* ROOT AND WRAPPERS */
 .sandbox-root {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +73,7 @@
 
 .gravitational-lens-layer {
   position: absolute;
-  height: 26vmin;
+  height: 25vmin;
   aspect-ratio: 1/1;
   border-radius: 50%;
   pointer-events: none;
@@ -138,8 +137,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
-  height: 4px;
+  width: 0.6vmin;
+  height: 0.6vmin;
   background: transparent;
   animation: twinkle 3s infinite ease-in-out;
   box-shadow:
@@ -180,5 +179,12 @@
   }
   50% {
     opacity: 0.4;
+  }
+}
+
+@media (max-width: 720px) {
+  .mouse-photon,
+  .star-field {
+    display: none;
   }
 }
