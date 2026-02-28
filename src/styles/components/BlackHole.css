@@ -25,7 +25,7 @@
   border-radius: 50%;
   box-shadow:
     inset -10px -10px 30px rgba(255, 255, 255, 0.1),
-    0 0 50px rgba(0, 0, 0, 1);
+    0 0 5vmin rgba(0, 0, 0, 0.6);
 }
 
 .accretion-disk {
@@ -50,15 +50,14 @@
 .accretion-disk::before {
   content: "";
   position: absolute;
-  height: 30vmin;
+  height: 34vmin;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  border: 15vmin solid rgb(255, 255, 255);
+  border: 18vmin solid rgb(255, 255, 255);
   box-shadow:
     0 0 20px #fff,
     0 0 40px rgb(255, 255, 255),
     inset 0 0 20px #fff;
-  filter: blur(10px);
 }
 
 .accretion-disk::after {
@@ -67,7 +66,7 @@
   height: 60vmin;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  border: 7vmin solid rgba(255, 255, 255, 0.15);
+  border: 7vmin solid rgba(255, 255, 255, 0.2);
   filter: blur(30px);
 }
 
@@ -79,7 +78,6 @@
   pointer-events: none;
   transform-style: preserve-3d;
   border: 8vmin solid rgb(255, 255, 255);
-  filter: blur(1px);
 }
 
 .gravitational-lens-layer::before {
@@ -104,7 +102,7 @@
   width: 140%;
   height: 140%;
   border-radius: 50%;
-  border: 5vmin solid rgba(255, 255, 255, 0.2);
+  border: 5vmin solid rgba(255, 255, 255, 0.5);
   filter: blur(25px);
 }
 
