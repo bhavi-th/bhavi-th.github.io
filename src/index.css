@@ -3,14 +3,14 @@ body {
   padding: 0;
   background-color: black;
   color: white;
-  font-family: "RobotoMono";
+  font-family: "Orbitron";
   font-size: 1.75vmin;
   word-spacing: -0.25rem;
 }
 
 @font-face {
-  font-family: "RobotoMono";
-  src: url("./fonts/RobotoMono.ttf") format("truetype");
+  font-family: "Orbitron";
+  src: url("./fonts/Orbitron-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

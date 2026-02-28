@@ -1,69 +1,184 @@
-.hero-main {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero-viewport {
+  height: calc(100dvh - 4rem);
+  width: 100dvw;
   background: transparent;
+  display: flex;
+  position: relative;
   overflow: hidden;
-  user-select: none;
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  padding: 5vmin;
+  margin-top: 4vmin;
+  box-sizing: border-box;
+  cursor: default;
 }
 
-.hero-info {
+.scanning-grid {
   position: absolute;
-  top: 18vh;
-  text-align: center;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 242, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 255, 0.1) 1px, transparent 1px);
+  background-size: 8vmin 8vmin;
+  mask-image: radial-gradient(
+    circle at center,
+    transparent 25vmin,
+    black 100vmin
+  );
   pointer-events: none;
-  background: transparent;
+  opacity: 0.4;
+}
+
+.orbital-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.15vmin solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.inner {
+  width: 55vmin;
+  height: 55vmin;
+  border-style: dashed;
+  animation: spin 80s linear infinite;
+}
+.outer {
+  width: 85vmin;
+  height: 85vmin;
+}
+
+.hud-edge {
+  position: absolute;
+  top: 5vmin;
+  left: 5vmin;
+  right: 5vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.tech-label {
+  font-size: 1.2vmin;
+  letter-spacing: 0.3vmin;
+  color: #00f2ff;
+  display: block;
+}
+
+.value-header,
+.metric-val {
+  font-size: 2.2vmin;
+  font-weight: 900;
+  margin-top: 0.8vmin;
+}
+
+.unit {
+  font-size: 1vmin;
+  opacity: 0.5;
+  margin-left: 0.3vmin;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 6vmin;
+  left: 5vmin;
+  right: 5vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
   mix-blend-mode: difference;
 }
 
-.event-horizon-text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70vmin;
-  margin: 0 auto;
-  font-size: 15vmin;
+.identity-group {
+  pointer-events: auto;
+  border-left: 0.4vmin solid #00f2ff;
+  padding-left: 3vmin;
+}
+
+.name-main {
+  font-size: 10vmin;
   font-weight: 900;
-  color: white;
-  text-transform: uppercase;
-  transform: scaleY(1.1);
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
-  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  letter-spacing: 1.5vmin;
+  margin: 0;
+  line-height: 1;
+  transition:
+    color 250ms linear,
+    text-shadow 250ms linear;
 }
 
-.hero-main:hover .event-horizon-text {
-  width: 95vmin;
-}
-
-.hero-subtitle {
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.5rem;
-  margin-block: 40vmin 8vmin;
-}
-
-.explore-btn {
-  pointer-events: all;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  padding: 2vmin 5vmin;
-  letter-spacing: 0.3rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-}
-
-.explore-btn:hover {
-  background: white;
+.name-main:hover {
   color: black;
-  box-shadow: 0 0 30px white;
+  text-shadow: 0 0 1.5px white;
 }
 
-@media (max-width: 720px) {
-  .hero-subtitle {
-    margin-top: 75vmin;
+.role-sub {
+  font-size: 1.4vmin;
+  letter-spacing: 0.6vmin;
+  opacity: 0.6;
+  margin-top: 1.2vmin;
+}
+
+.cta-wrap {
+  pointer-events: auto;
+}
+
+.warp-button {
+  background: #fff;
+  color: #000;
+  border: 5px solid transparent;
+  padding: 2vmin 5vmin;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.6vmin;
+  font-weight: 900;
+  cursor: pointer;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.warp-button:hover {
+  background: black;
+  color: white;
+  transform: translateY(-0.5vmin);
+  border: 5px solid white;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .hero-viewport {
+    height: calc(100dvh - 8rem);
+  }
+  .hud-edge {
+    flex-direction: column;
+    gap: 3vmin;
+  }
+  .text-right {
+    text-align: left;
+  }
+  .name-main {
+    font-size: 8vmin;
+    letter-spacing: 0.8vmin;
+  }
+  .role-sub {
+    font-size: 1.8vmin;
+  }
+  .warp-button {
+    font-size: 2.2vmin;
+    padding: 3vmin 8vmin;
+  }
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4vmin;
   }
 }

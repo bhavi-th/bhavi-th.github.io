@@ -60,23 +60,6 @@ const BlackHole = () => {
 
   return (
     <>
-      <div
-        className="star-field"
-        style={{
-          transform: `translate(${mousePos.parallaxX * -0.5}px, ${mousePos.parallaxY * -0.5}px)`,
-        }}
-      />
-
-      <div
-        className="mouse-photon"
-        style={{
-          left: `${mousePos.x - 24}px`,
-          top: `${mousePos.y - 24}px`,
-          transform: `translate(-50%, -50%) scale(${scale})`,
-          opacity: scale > 0.1 ? 1 : 0,
-        }}
-      />
-
       <div className="sandbox-root">
         <div
           className="black-hole-wrapper"
