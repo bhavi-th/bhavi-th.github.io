@@ -56,7 +56,7 @@ const BlackHole = () => {
     };
   }, []);
 
-  const layers = Array.from({ length: 11 }, (_, i) => (i - 5) * 0.5);
+  const layers = Array.from({ length: 1 }, (_, i) => (i - 5) * 0.5);
 
   return (
     <>
@@ -91,7 +91,7 @@ const BlackHole = () => {
               className="accretion-disk back"
               style={{
                 transform: `rotateX(80deg) translateZ(${z}px)`,
-                opacity: 0.2,
+                // opacity: 0.8,
               }}
             />
           ))}
@@ -104,7 +104,7 @@ const BlackHole = () => {
               className="accretion-disk front"
               style={{
                 transform: `rotateX(80deg) translateZ(${z}px)`,
-                opacity: 0.2,
+                // opacity: 0.8,
               }}
             />
           ))}
@@ -115,7 +115,7 @@ const BlackHole = () => {
               className="gravitational-lens-layer"
               style={{
                 transform: `translateZ(${z * 2}px)`,
-                opacity: 0.2,
+                // opacity: 0.8,
               }}
             />
           ))}

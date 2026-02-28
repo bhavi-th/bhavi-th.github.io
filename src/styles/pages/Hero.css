@@ -63,7 +63,7 @@
 }
 
 @media (max-width: 720px) {
-  .hero-info {
-    top: 30vh;
+  .hero-subtitle {
+    margin-top: 75vmin;
   }
 }
