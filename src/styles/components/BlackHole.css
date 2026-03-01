@@ -1,12 +1,63 @@
+/* Add/Update these specific classes */
+
 .sandbox-root {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   perspective: 1200px;
+  z-index: -1; /* Keep it behind your sections */
+  pointer-events: none; /* Allows you to click things on the pages above it */
+}
+
+.scanning-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 242, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 255, 0.1) 1px, transparent 1px);
+  background-size: 8vmin 8vmin;
+  mask-image: radial-gradient(
+    circle at center,
+    transparent 20vmin,
+    black 100vmin
+  );
+  pointer-events: none;
+}
+
+.orbital-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.15vmin solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+.inner {
+  width: 55vmin;
+  height: 55vmin;
+  border-style: dashed;
+  animation: spin 80s linear infinite;
+}
+.outer {
+  width: 85vmin;
+  height: 85vmin;
+}
+
+.scroll-move-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  will-change: transform; /* Optimization for GSAP */
 }
 
 .black-hole-wrapper {
@@ -14,7 +65,7 @@
   justify-content: center;
   align-items: center;
   transform-style: preserve-3d;
-  transition: transform 0.2s ease-out;
+  /* Removed the CSS transition to let React/GSAP handle it smoothly */
 }
 
 #event-horizon {

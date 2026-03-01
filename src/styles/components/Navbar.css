@@ -14,10 +14,16 @@
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+.top-l,
+.top-r {
+  backdrop-filter: blur(5px);
+}
+
 .top-l {
   top: 2vmin;
   left: 4vmin;
   gap: 1.5vmin;
+  backdrop-filter: blur(5px);
 }
 
 .bracket-l {
@@ -29,9 +35,9 @@
 .bracket-l::before {
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 2vmin;
+  width: 18vmin;
   height: 2px;
   background: #00f2ff;
 }
@@ -72,30 +78,31 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  gap: 2px;
   opacity: 0.7;
   transition: 0.3s;
 }
 
 .node-text {
+  width: 12vmin;
+  text-align: center;
   font-size: 1.3vmin;
+  font-weight: bold;
   letter-spacing: 0.3vmin;
 }
 .node-dot {
-  width: 4px;
-  height: 4px;
+  height: 2px;
+  width: 0px;
   background: #00f2ff;
   margin-top: 0.5vmin;
-  border-radius: 50%;
-  opacity: 0;
   transition: 0.3s;
 }
 
 .nav-node:hover {
   opacity: 1;
-  transform: translateY(-2px);
 }
 .nav-node:hover .node-dot {
-  opacity: 1;
+  width: 12vmin;
   box-shadow: 0 0 8px #00f2ff;
 }
 
@@ -140,6 +147,10 @@
   }
   .node-text {
     font-size: 2vmin;
+  }
+
+  .bracket-l::before {
+    width: 2vmin;
   }
 
   .bracket-r {

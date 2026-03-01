@@ -1,6 +1,5 @@
 .hero-viewport {
-  height: calc(100dvh - 4rem);
-  width: 100dvw;
+  height: 100dvh;
   background: transparent;
   display: flex;
   position: relative;
@@ -8,50 +7,13 @@
   color: #fff;
   font-family: "Orbitron", sans-serif;
   padding: 5vmin;
-  margin-top: 4vmin;
   box-sizing: border-box;
   cursor: default;
 }
 
-.scanning-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0, 242, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 242, 255, 0.1) 1px, transparent 1px);
-  background-size: 8vmin 8vmin;
-  mask-image: radial-gradient(
-    circle at center,
-    transparent 25vmin,
-    black 100vmin
-  );
-  pointer-events: none;
-  opacity: 0.4;
-}
-
-.orbital-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 0.15vmin solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.inner {
-  width: 55vmin;
-  height: 55vmin;
-  border-style: dashed;
-  animation: spin 80s linear infinite;
-}
-.outer {
-  width: 85vmin;
-  height: 85vmin;
-}
-
 .hud-edge {
   position: absolute;
-  top: 5vmin;
+  top: 10vmin;
   left: 5vmin;
   right: 5vmin;
   display: flex;
@@ -138,7 +100,7 @@
   font-weight: 900;
   cursor: pointer;
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .warp-button:hover {
@@ -155,9 +117,6 @@
 }
 
 @media (max-aspect-ratio: 1/1) {
-  .hero-viewport {
-    height: calc(100dvh - 8rem);
-  }
   .hud-edge {
     flex-direction: column;
     gap: 3vmin;
@@ -180,5 +139,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 4vmin;
+    bottom: 20vmin;
   }
 }

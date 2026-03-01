@@ -1,11 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
 import "../styles/components/BlackHole.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const BlackHole = () => {
   const containerRef = useRef(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [scale, setScale] = useState(1);
+  const scrollMoveRef = useRef(null); // Ref for the horizontal scroll movement
+  const [mousePos, setMousePos] = useState({
+    x: 0,
+    y: 0,
+    parallaxX: 0,
+    parallaxY: 0,
+  });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -22,24 +30,22 @@ const BlackHole = () => {
         repeat: -1,
         ease: "none",
       });
+
+      gsap.to(scrollMoveRef.current, {
+        scale: 1.5,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1.5,
+        },
+      });
     }, containerRef);
 
     const handleMouseMove = (e) => {
       const { clientX: x, clientY: y } = e;
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
-
-      const distance = Math.sqrt(
-        Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2),
-      );
-      const vmin = Math.min(window.innerWidth, window.innerHeight) / 100;
-      const horizonRadius = 12.5 * vmin;
-      const maxDist = Math.max(centerX, centerY);
-
-      let newScale = (distance - horizonRadius) / (maxDist - horizonRadius);
-      newScale = Math.max(0, Math.min(1.5, newScale * 1.5));
-
-      setScale(newScale);
 
       setMousePos({
         x: x,
@@ -59,23 +65,25 @@ const BlackHole = () => {
   const layers = Array.from({ length: 1 }, (_, i) => (i - 5) * 0.5);
 
   return (
-    <>
-      <div className="sandbox-root">
+    <div className="sandbox-root" ref={containerRef}>
+      <div className="scanning-grid"></div>
+      <div className="orbital-ring inner"></div>
+      <div className="orbital-ring outer"></div>
+
+      {/* This wrapper handles the Scroll movement */}
+      <div className="scroll-move-wrapper" ref={scrollMoveRef}>
+        {/* This wrapper handles the Mouse Parallax */}
         <div
           className="black-hole-wrapper"
-          ref={containerRef}
           style={{
-            transform: `translate(${mousePos.parallaxX}px, ${mousePos.parallaxY}px)`,
+            transform: `translate3d(${mousePos.parallaxX}px, ${mousePos.parallaxY}px, 0)`,
           }}
         >
           {layers.map((z) => (
             <div
               key={`back-${z}`}
               className="accretion-disk back"
-              style={{
-                transform: `rotateX(80deg) translateZ(${z}px)`,
-                // opacity: 0.8,
-              }}
+              style={{ transform: `rotateX(80deg) translateZ(${z}px)` }}
             />
           ))}
 
@@ -85,10 +93,7 @@ const BlackHole = () => {
             <div
               key={`front-${z}`}
               className="accretion-disk front"
-              style={{
-                transform: `rotateX(80deg) translateZ(${z}px)`,
-                // opacity: 0.8,
-              }}
+              style={{ transform: `rotateX(80deg) translateZ(${z}px)` }}
             />
           ))}
 
@@ -96,15 +101,12 @@ const BlackHole = () => {
             <div
               key={`lens-${z}`}
               className="gravitational-lens-layer"
-              style={{
-                transform: `translateZ(${z * 2}px)`,
-                // opacity: 0.8,
-              }}
+              style={{ transform: `translateZ(${z * 2}px)` }}
             />
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -18,9 +18,9 @@ const Hero = () => {
 
   return (
     <section className="hero-viewport">
-      <div className="scanning-grid"></div>
+      {/* <div className="scanning-grid"></div>
       <div className="orbital-ring inner"></div>
-      <div className="orbital-ring outer"></div>
+      <div className="orbital-ring outer"></div> */}
 
       <div className="hud-edge top-edge">
         <div className="hud-unit">
