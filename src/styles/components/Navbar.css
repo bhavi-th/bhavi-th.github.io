@@ -1,6 +1,7 @@
 .nav-hud {
   position: fixed;
   inset: 0;
+  height: max-content;
   z-index: 1;
   pointer-events: none;
   font-family: "Orbitron", sans-serif;
@@ -9,7 +10,10 @@
 
 .hud-corner {
   position: absolute;
+  height: 60px;
+  width: 45%;
   display: flex;
+  align-items: center;
   pointer-events: auto;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -26,67 +30,49 @@
   backdrop-filter: blur(5px);
 }
 
-.bracket-l {
-  width: 2px;
-  height: 5vmin;
-  background: #00f2ff;
-  position: relative;
-}
-.bracket-l::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 18vmin;
-  height: 2px;
-  background: #00f2ff;
-}
-
 .corner-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .label-tiny {
-  font-size: 0.8vmin;
+  font-size: 1.25vmin;
   color: #00f2ff;
-  opacity: 0.6;
+  opacity: 0.8;
   letter-spacing: 0.2vmin;
 }
 .brand-id {
-  font-size: 2vmin;
-  font-weight: 700;
+  margin-left: 1.5vmin;
+  font-size: 3vmin;
+  font-weight: bolder;
   color: #fff;
+  text-shadow: 0px 0px 4px white;
   letter-spacing: 0.4vmin;
 }
 
 .top-r {
   top: 2vmin;
-  right: 4vmin;
+  right: 0vmin;
   gap: 2vmin;
 }
 
 .nav-list {
+  width: 100%;
   display: flex;
-  gap: 4vmin;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .nav-node {
   text-decoration: none;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: 0.3s;
 }
 
 .node-text {
-  width: 12vmin;
   text-align: center;
-  font-size: 1.3vmin;
+  font-size: 1.75vmin;
   font-weight: bold;
   letter-spacing: 0.3vmin;
 }
@@ -102,38 +88,28 @@
   opacity: 1;
 }
 .nav-node:hover .node-dot {
-  width: 12vmin;
+  width: 100%;
   box-shadow: 0 0 8px #00f2ff;
-}
-
-.bracket-r {
-  width: 2px;
-  height: 5vmin;
-  background: #00f2ff;
-  position: relative;
-}
-.bracket-r::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 2vmin;
-  height: 2px;
-  background: #00f2ff;
 }
 
 @media (max-aspect-ratio: 1/1) or (max-width: 768px) {
   .nav-hud {
+    height: auto;
     padding: 6vmin;
   }
 
+  .label-tiny {
+    font-size: 2.5vmin;
+  }
+
   .brand-id {
-    font-size: 3vmin;
+    font-size: 5vmin;
+    margin-left: 5vmin;
   }
 
   .top-r {
     top: auto;
-    bottom: 6vmin;
+    bottom: 2vmin;
     right: 6vmin;
     left: 6vmin;
     justify-content: space-between;
@@ -146,15 +122,7 @@
     gap: 0;
   }
   .node-text {
-    font-size: 2vmin;
-  }
-
-  .bracket-l::before {
-    width: 2vmin;
-  }
-
-  .bracket-r {
-    display: none;
+    font-size: 3vmin;
   }
 }
 
