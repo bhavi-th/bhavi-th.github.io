@@ -1,22 +1,23 @@
 .hero-viewport {
   height: 100dvh;
-  background: transparent;
+  background: var(--bg-deep);
   display: flex;
   align-items: flex-end;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  color: #fff;
+  color: var(--text-primary);
   font-family: "Orbitron", sans-serif;
 }
 
 .hero-content {
-  position: absolute;
+  margin-bottom: 4vmin;
   width: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 2;
   mix-blend-mode: difference;
 }
 
@@ -27,47 +28,75 @@
     sans-serif;
   font-size: 16vmin;
   margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.5vmin;
+  animation: float 6s ease-in-out infinite;
+  background: linear-gradient(to bottom, #ffffff 40%, var(--accent-purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.3));
 }
 
 .role-sub {
   font-size: 2vmin;
-  letter-spacing: 0.6vmin;
-  opacity: 0.6;
-  margin-top: 1.2vmin;
+  letter-spacing: 0.8vmin;
+  color: var(--accent-blue);
+  opacity: 0.8;
+  margin-top: 1vmin;
+  text-transform: uppercase;
 }
 
 #work-btn {
-  margin-block: 3.5vmin 5vmin;
-  padding: 2vmin 4vmin;
-  font-size: 2vmin;
+  margin-top: 5vmin;
+  padding: 1.8vmin 4.5vmin;
+  font-size: 1.8vmin;
+  font-family: "Orbitron", sans-serif;
   font-weight: bold;
-  border: 1px solid white;
-  border-radius: 1vmin;
-  transition:
-    background-color 250ms linear,
-    color 250ms linear,
-    box-shadow 250ms linear;
+  background: transparent;
+  color: white;
+  border: 1px solid var(--accent-blue);
+  border-radius: 0.5vmin;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 #work-btn:hover {
-  background-color: transparent;
-  color: white;
-  box-shadow: 0px 0px 10px white;
+  background: var(--accent-blue);
+  color: var(--bg-deep);
+  box-shadow: 0px 0px 25px var(--accent-blue);
+  transform: translateY(-3px);
 }
 
-@media (max-aspect-ratio: 1/1) {
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(0.5deg);
+  }
+}
+
+@media (max-aspect-ratio: 1/1) or (max-width: 768px) {
   .hero-content {
-    flex-direction: column;
-    gap: 4vmin;
-    bottom: calc(60px + 10vmin);
+    gap: 2vmin;
+    margin-bottom: 20vmin;
+  }
+
+  .name-main {
+    font-size: 16vmin;
   }
 
   .role-sub {
     font-size: 3vmin;
-    word-spacing: 0.5vmin;
+    letter-spacing: 0.4vmin;
   }
 
   #work-btn {
-    font-size: 4.25vmin;
+    font-size: 3.5vmin;
+    padding: 3vmin 8vmin;
   }
 }

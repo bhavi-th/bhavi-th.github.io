@@ -31,14 +31,23 @@ const BlackHole = () => {
         ease: "none",
       });
 
-      gsap.to(scrollMoveRef.current, {
-        scale: 1.5,
-        ease: "power1.inOut",
+      const tl = gsap.timeline({
         scrollTrigger: {
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1.5,
+          start: "top top", // Start when top of container hits top of viewport
+          end: "bottom bottom", // End when bottom hits bottom
+          scrub: 1, // Smooth scrubbing
+          pin: true, // Keeps the BlackHole centered while scrolling
         },
+      });
+
+      tl.to(scrollMoveRef.current, {
+        scale: 0.5,
+        duration: 4, // Represents the first 50% of the scroll (1st to 2nd page)
+        ease: "power1.inOut",
+      }).to(scrollMoveRef.current, {
+        scale: 1.5, // Grows larger (adjust to 1 for original size)
+        duration: 1, // Represents the remaining 50% (2nd to 3rd page)
+        ease: "power1.inOut",
       });
     }, containerRef);
 

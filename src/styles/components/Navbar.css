@@ -2,10 +2,11 @@
   position: fixed;
   inset: 0;
   height: max-content;
-  z-index: 1;
+  z-index: 100;
   pointer-events: none;
   font-family: "Orbitron", sans-serif;
   padding: 4vmin;
+  animation: hud-in 1.5s ease-out;
 }
 
 .hud-corner {
@@ -18,36 +19,45 @@
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.top-l,
-.top-r {
-  backdrop-filter: blur(5px);
-}
-
 .top-l {
+  backdrop-filter: blur(12px);
   top: 2vmin;
   left: 4vmin;
   gap: 1.5vmin;
-  backdrop-filter: blur(5px);
+  border-left: 2px solid var(--accent-blue);
+  padding-left: 15px;
+  width: 100%;
 }
 
 .corner-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
+
 .label-tiny {
   font-size: 1.25vmin;
-  color: #00f2ff;
-  opacity: 0.8;
+  color: var(--accent-blue);
+  opacity: 0.9;
   letter-spacing: 0.2vmin;
 }
+
 .brand-id {
   margin-left: 1.5vmin;
-  font-size: 3vmin;
+  font-size: clamp(18px, 4vmin, 32px);
   font-weight: bolder;
   color: #fff;
-  text-shadow: 0px 0px 4px white;
+  text-shadow: 0px 0px 10px var(--accent-purple);
   letter-spacing: 0.4vmin;
+}
+
+#dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 0 0 10px var(--accent-blue);
 }
 
 .top-r {
@@ -66,7 +76,7 @@
 .nav-node {
   text-decoration: none;
   color: #fff;
-  opacity: 0.8;
+  opacity: 0.7;
   transition: 0.3s;
 }
 
@@ -76,20 +86,23 @@
   font-weight: bold;
   letter-spacing: 0.3vmin;
 }
+
 .node-dot {
   height: 2px;
   width: 0px;
-  background: #00f2ff;
+  background: var(--accent-blue);
   margin-top: 0.5vmin;
   transition: 0.3s;
 }
 
 .nav-node:hover {
   opacity: 1;
+  color: var(--accent-blue);
 }
+
 .nav-node:hover .node-dot {
   width: 100%;
-  box-shadow: 0 0 8px #00f2ff;
+  box-shadow: 0 0 12px var(--accent-blue);
 }
 
 @media (max-aspect-ratio: 1/1) or (max-width: 768px) {
@@ -97,14 +110,11 @@
     height: auto;
     padding: 6vmin;
   }
-
   .label-tiny {
     font-size: 2.5vmin;
   }
-
   .brand-id {
     font-size: 5vmin;
-    margin-left: 5vmin;
   }
 
   .top-r {
@@ -112,31 +122,23 @@
     bottom: 2vmin;
     right: 6vmin;
     left: 6vmin;
-    justify-content: space-between;
     width: calc(100% - 12vmin);
+    border-top: 1px solid rgba(0, 242, 255, 0.2);
+    backdrop-filter: blur(12px);
   }
 
-  .nav-list {
-    width: 100%;
-    justify-content: space-evenly;
-    gap: 0;
-  }
   .node-text {
-    font-size: 3vmin;
+    font-size: 3.5vmin;
   }
 }
 
 @keyframes hud-in {
   from {
     opacity: 0;
-    transform: scale(1.1);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
   }
-}
-
-.nav-hud {
-  animation: hud-in 1.5s ease-out;
 }

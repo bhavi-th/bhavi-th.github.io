@@ -4,6 +4,8 @@ import BlackHole from "./components/BlackHole";
 import Hero from "./pages/Hero";
 import Skills from "./pages/Skills";
 import "./App.css";
+import AboutMe from "./pages/AboutMe";
+import Projects from "./pages/Projects";
 
 const App = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -22,7 +24,9 @@ const App = () => {
       <Navbar />
       <BlackHole isExpanded={isExpanded} />
       <Hero />
+      <AboutMe />
       <Skills />
+      <Projects />
     </>
   );
 };

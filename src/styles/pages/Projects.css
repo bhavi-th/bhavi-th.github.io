@@ -1,0 +1,133 @@
+.Projects {
+  min-height: calc(100dvh - (14vmin + 60px));
+  padding-inline: 5vmin;
+  color: #ffffff;
+  background-attachment: fixed;
+}
+
+.projects-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subtitle {
+  color: #9d4edd;
+  letter-spacing: 0.8vmin; /* Spacing scales */
+  font-size: 2vmin;
+  font-weight: 600;
+  margin-bottom: 2vmin;
+}
+
+.main-title {
+  /* Using clamp to ensure it doesn't get TOO small on tiny phones */
+  font-size: clamp(4vmin, 6vmin, 12vmin);
+  font-weight: 800;
+  margin-bottom: 6vmin;
+  text-shadow: 0 0 3vmin rgba(0, 0, 0, 0.8);
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4vmin;
+  margin-bottom: 5vmin;
+}
+
+/* Glassmorphism Card */
+.project-card {
+  background: rgba(10, 10, 20, 0.6);
+  max-width: 45vmin;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  backdrop-filter: blur(1.5vmin);
+  -webkit-backdrop-filter: blur(1.5vmin);
+  border: 0.2vmin solid rgba(157, 78, 221, 0.2);
+  border-radius: 4vmin;
+  padding: 4vmin;
+  text-align: left;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover {
+  transform: translateY(-1.5vmin);
+  border-color: rgba(157, 78, 221, 0.6);
+  background: rgba(10, 10, 20, 0.8);
+  box-shadow: 0 2vmin 5vmin rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+  font-size: 3vmin;
+  margin-bottom: 2vmin;
+}
+
+.card-description {
+  color: #cbd5e1;
+  font-size: 2vmin;
+  line-height: 1.6;
+  margin-bottom: 4vmin;
+}
+
+/* Tags with glow */
+.tag-container {
+  display: flex;
+  gap: 1.5vmin;
+  margin-bottom: 4vmin;
+  flex-wrap: wrap; /* Important for mobile */
+}
+
+.project-tag {
+  font-size: 1.8vmin;
+  padding: 1vmin 2.5vmin;
+  border-radius: 10vmin;
+  background: rgba(157, 78, 221, 0.6);
+  border: 0.3vmin solid rgb(157, 78, 221);
+  color: #e9d5ff;
+  white-space: nowrap;
+}
+
+.project-link {
+  color: #2dd4bf;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2vmin;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5vmin;
+}
+
+.project-link span {
+  transition: transform 0.2s;
+}
+
+.project-link:hover span {
+  transform: translateX(1vmin);
+}
+
+@media (max-width: 720px) {
+  .subtitle {
+    font-size: 3vmin;
+  }
+
+  .project-card {
+    max-width: 80%;
+    width: 80%;
+  }
+
+  .card-title {
+    font-size: 4.5vmin;
+  }
+
+  .card-description {
+    font-size: 3.5vmin;
+  }
+
+  .project-tag {
+    font-size: 2.5vmin;
+  }
+
+  .project-link {
+    font-size: 3vmin;
+  }
+}

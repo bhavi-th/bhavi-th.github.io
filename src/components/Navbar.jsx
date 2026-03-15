@@ -6,10 +6,7 @@ const Navbar = () => {
       <div className="hud-corner top-l">
         <div className="corner-content">
           <span className="label-tiny">ENGINEER</span>
-          <span className="brand-id">
-            <div id="dot"></div>
-            BHAVITH.S
-          </span>
+          <span className="brand-id">BHAVITH.S</span>
         </div>
       </div>
 

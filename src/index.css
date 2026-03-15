@@ -1,11 +1,19 @@
+:root {
+  --accent-purple: #a855f7;
+  --accent-blue: #00f2ff;
+  --text-primary: #ffffff;
+  --text-dim: #94a3b8;
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: black;
-  color: white;
-  font-family: "Orbitron";
+  color: var(--text-primary);
+  font-family: "Orbitron", sans-serif;
   font-size: 1.75vmin;
-  word-spacing: -0.25rem;
+  word-spacing: -0.05rem; /* Reduced for better readability */
+  overflow-x: hidden;
 }
 
 @font-face {
