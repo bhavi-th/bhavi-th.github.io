@@ -1,6 +1,7 @@
 .Projects {
   min-height: calc(100dvh - (14vmin + 60px));
   padding-inline: 5vmin;
+  padding-top: 80px;
   color: #ffffff;
   background-attachment: fixed;
 }

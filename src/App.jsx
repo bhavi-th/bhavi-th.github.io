@@ -6,6 +6,7 @@ import Skills from "./pages/Skills";
 import "./App.css";
 import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
+import Contacts from "./pages/Contacts";
 
 const App = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -27,6 +28,7 @@ const App = () => {
       <AboutMe />
       <Skills />
       <Projects />
+      <Contacts />
     </>
   );
 };
