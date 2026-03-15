@@ -5,7 +5,7 @@ const PROJECTS_DATA = [
     title: "Personal Website",
     description: "A portfolio website built with React and Motoko.",
     tags: ["React", "Frontend"],
-    link: "https://yourportfolio.com", // Added a placeholder link
+    link: "",
   },
   {
     title: "ATTSYS 2.0",
