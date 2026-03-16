@@ -62,11 +62,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>© 2024 Bhavith S. All rights reserved.</p>
-            <div>
-              <a href="/privacy">Privacy Policy</a>
-              <a href="/terms">Terms of Service</a>
-            </div>
+            <p>© 2026 Bhavith S. All rights reserved.</p>
           </div>
         </div>
       </footer>
