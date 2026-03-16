@@ -7,6 +7,7 @@ import "./App.css";
 import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
 import Contacts from "./pages/Contacts";
+import Footer from "./pages/Footer";
 
 const App = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -29,6 +30,7 @@ const App = () => {
       <Skills />
       <Projects />
       <Contacts />
+      <Footer />
     </>
   );
 };

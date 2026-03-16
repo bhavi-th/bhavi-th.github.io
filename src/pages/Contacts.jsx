@@ -29,6 +29,14 @@ const Contacts = () => {
       return;
     }
 
+    const email = e.target.user_email.value;
+    const allowedPostfixRegex = /@.*\.(com|in|org|net|edu)$/i;
+
+    if (!allowedPostfixRegex.test(email)) {
+      setStatus("Unsupported domain. Use .com, .in, .org, .net, or .edu");
+      return;
+    }
+
     setStatus("Initiating Launch...");
 
     emailjs
@@ -103,6 +111,8 @@ const Contacts = () => {
                 id="user_email"
                 placeholder="your@email.com"
                 required
+                pattern="^.*@.*\.(com|in|org|net|edu)$"
+                title="Please enter an valid email"
               />
             </div>
 
@@ -131,9 +141,6 @@ const Contacts = () => {
             </button>
           </form>
         </div>
-        <footer className="footer">
-          <p>© 2026 Bhavith S · Crafted somewhere in the universe</p>
-        </footer>
       </div>
     </section>
   );

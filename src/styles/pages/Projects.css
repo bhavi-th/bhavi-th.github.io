@@ -1,5 +1,5 @@
 .Projects {
-  min-height: calc(100dvh - (14vmin + 60px));
+  min-height: calc(100dvh - 14vmin);
   padding-inline: 5vmin;
   padding-top: 80px;
   color: #ffffff;

@@ -18,7 +18,7 @@ const PROJECTS_DATA = [
 
 const Projects = () => {
   return (
-    <section className="Projects" id="work">
+    <section className="Projects" id="projects">
       <div className="projects-container">
         <header className="projects-header">
           <p className="subtitle">PROJECTS</p>

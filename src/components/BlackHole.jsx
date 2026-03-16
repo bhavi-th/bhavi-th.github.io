@@ -51,8 +51,8 @@ const BlackHole = () => {
           ease: "power1.inOut",
         })
         .to(scrollMoveRef.current, {
-          rotateZ: "90deg",
-          scale: 0.4,
+          scale: 2,
+          translateY: "-60%",
           duration: 1,
           ease: "power1.inOut",
         });

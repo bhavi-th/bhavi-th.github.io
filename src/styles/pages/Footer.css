@@ -1,0 +1,157 @@
+hr {
+  margin: 0;
+  margin-top: 2.5vmin;
+}
+
+.Footer {
+  color: #64748b;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.25vmin;
+}
+
+.footer-links-desc {
+  padding: 2vmin;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4vmin;
+}
+
+.footer-desc {
+  grid-column: 1/3;
+}
+
+.footer-name {
+  color: white;
+  margin-block: 2vmin;
+}
+
+.footer-desc p {
+  max-width: 50vmin;
+}
+
+.desc-socials {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2vmin;
+  margin-block: 2vmin;
+}
+
+.footer-desc svg {
+  height: 4vmin;
+  aspect-ratio: 1/1;
+  opacity: 0.5;
+}
+
+.footer-desc .desc-socials a:hover {
+  display: flex;
+  opacity: 1;
+  aspect-ratio: 1/1;
+  box-shadow: 0 0 25px white;
+}
+
+.footer-desc .desc-socials a:nth-child(2n) {
+  border-radius: 50%;
+}
+
+.footer-name {
+  font-size: 3.5vmin;
+}
+
+.footer-links {
+  border-left: 1px solid white;
+}
+
+.footer-links h4 {
+  margin: 1vmin;
+  margin-block: 0vmin 2vmin;
+}
+
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  position: relative;
+  padding-left: 2vmin;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-links li {
+  color: white;
+  opacity: 0.8;
+}
+
+.footer-links li::before {
+  content: "";
+  position: absolute;
+  left: 0vmin;
+  height: 0.2vmin;
+  width: 1.5vmin;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(500%);
+}
+
+.Footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.Footer a:hover {
+  font-weight: bold;
+  opacity: 1;
+  text-shadow: 0 0 25px white;
+}
+
+.footer-bottom {
+  margin-inline: 2vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom div {
+  display: flex;
+  gap: 3.5vmin;
+}
+
+@media (min-width: 1024px) {
+  .footer-container {
+    max-width: 75%;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) or (max-width: 768px) {
+  Footer {
+    margin-bottom: calc(8vmin + 60px);
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-links-desc {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+  }
+
+  .footer-desc {
+    grid-column: 1;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-desc p {
+    text-align: center;
+    max-width: 80vmin;
+  }
+
+  .footer-links {
+    width: max-content;
+  }
+}

@@ -16,7 +16,7 @@ const Navbar = () => {
             <span className="node-text">ABOUT ME</span>
             <div className="node-dot"></div>
           </a>
-          <a href="#work" className="nav-node">
+          <a href="#projects" className="nav-node">
             <span className="node-text">PROJECTS</span>
             <div className="node-dot"></div>
           </a>
