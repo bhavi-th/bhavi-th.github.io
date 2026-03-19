@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/components/Navbar.css";
 
 const Navbar = () => {
@@ -6,24 +7,30 @@ const Navbar = () => {
       <div className="hud-corner top-l">
         <div className="corner-content">
           <span className="label-tiny">ENGINEER</span>
-          <span className="brand-id">BHAVITH.S</span>
+          {/* Clicking your name should take you back to the home top */}
+          <Link to="/" className="brand-link">
+            <span className="brand-id">BHAVITH.S</span>
+          </Link>
         </div>
       </div>
 
       <div className="hud-corner top-r">
         <div className="nav-list">
-          <a href="#about" className="nav-node">
+          {/* Use "to" instead of "href" */}
+          <Link to="/about" className="nav-node">
             <span className="node-text">ABOUT ME</span>
             <div className="node-dot"></div>
-          </a>
-          <a href="#projects" className="nav-node">
+          </Link>
+
+          <Link to="/projects" className="nav-node">
             <span className="node-text">PROJECTS</span>
             <div className="node-dot"></div>
-          </a>
-          <a href="#contact" className="nav-node">
+          </Link>
+
+          <Link to="/contact" className="nav-node">
             <span className="node-text">CONTACT</span>
             <div className="node-dot"></div>
-          </a>
+          </Link>
         </div>
       </div>
 

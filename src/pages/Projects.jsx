@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/pages/Projects.css";
 
 const PROJECTS_DATA = [
@@ -16,21 +17,25 @@ const PROJECTS_DATA = [
   },
 ];
 
-const Projects = () => {
+const Projects = ({ limit }) => {
+  const displayedProjects = limit
+    ? PROJECTS_DATA.slice(0, limit)
+    : PROJECTS_DATA;
   return (
     <section className="Projects" id="projects">
       <div className="projects-container">
         <header className="projects-header">
           <p className="subtitle">PROJECTS</p>
-          <h2 className="main-title">Projects Completed</h2>
+          <h2 className="main-title">
+            {limit ? "Featured Projects" : "All Projects"}
+          </h2>
         </header>
 
         <div className="projects-grid">
-          {PROJECTS_DATA.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <div key={index} className="project-card">
               <h3 className="card-title">{project.title}</h3>
               <p className="card-description">{project.description}</p>
-
               <div className="tag-container">
                 {project.tags.map((tag) => (
                   <span key={tag} className="project-tag">
@@ -38,8 +43,6 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-
-              {/* Added target="_blank" so users don't leave your site when clicking */}
               <a
                 href={project.link || "#"}
                 className="project-link"
@@ -51,6 +54,14 @@ const Projects = () => {
             </div>
           ))}
         </div>
+
+        {limit && PROJECTS_DATA.length > limit && (
+          <div className="view-more-container">
+            <Link to="/projects" className="view-more-btn">
+              View All Projects
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

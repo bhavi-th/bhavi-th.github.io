@@ -40,7 +40,7 @@ const Skills = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.8 },
+      { threshold: 0.4 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);

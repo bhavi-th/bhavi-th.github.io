@@ -6,6 +6,7 @@
   background: transparent;
   position: relative;
   overflow: hidden;
+  padding-top: 10vmin;
 }
 
 /* --- BACKGROUND TEXT --- */

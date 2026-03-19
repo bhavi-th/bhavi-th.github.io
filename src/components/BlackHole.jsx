@@ -33,16 +33,16 @@ const BlackHole = () => {
 
       const tl = gsap.timeline({
         scrollTrigger: {
-          start: "top top", // Start when top of container hits top of viewport
-          end: "bottom bottom", // End when bottom hits bottom
-          scrub: 1, // Smooth scrubbing
-          pin: true, // Keeps the BlackHole centered while scrolling
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1,
+          pin: true,
         },
       });
 
       tl.to(scrollMoveRef.current, {
         scale: 0.5,
-        duration: 2, // Represents the first 50% of the scroll (1st to 2nd page)
+        duration: 0.3,
         ease: "power1.inOut",
       })
         .to(scrollMoveRef.current, {

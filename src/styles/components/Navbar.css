@@ -21,7 +21,7 @@
 
 .top-l {
   backdrop-filter: blur(12px);
-  top: 2vmin;
+  top: 1vmin;
   left: 4vmin;
   gap: 1.5vmin;
   border-left: 2px solid var(--accent-blue);
@@ -50,6 +50,11 @@
   letter-spacing: 0.4vmin;
 }
 
+.brand-link {
+  text-decoration: none;
+  pointer-events: auto;
+}
+
 #dot {
   display: inline-block;
   width: 8px;
@@ -61,7 +66,7 @@
 }
 
 .top-r {
-  top: 2vmin;
+  top: 1vmin;
   right: 0vmin;
   gap: 2vmin;
 }

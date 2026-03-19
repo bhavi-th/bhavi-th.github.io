@@ -1,5 +1,13 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import "../styles/pages/Contacts.css";
 
 const Contacts = () => {
@@ -69,18 +77,70 @@ const Contacts = () => {
 
   return (
     <section className="contacts-section" id="contact">
-      <div className="container">
-        <div className="section-header">
-          <span className="subtitle">CONTACT</span>
-          <h2 className="title">Send a Signal</h2>
-          <p className={`description ${isSuccess ? "success-text" : ""}`}>
-            {status ||
-              "Transmitting across the cosmos. I'll respond at light speed."}
-          </p>
+      <div className="contact-main-container">
+        <div className="contact-sidebar">
+          <h2 className="main-title">Let's Connect</h2>
+          <div className="info-group">
+            <div className="info-card">
+              <FaEnvelope className="info-icon" />
+              <div className="info-details">
+                <label>ENCRYPTED MAIL</label>
+                <a href="mailto:bhaviths15@gmail.com">bhaviths15@gmail.com</a>
+              </div>
+            </div>
+
+            <div className="info-card">
+              <FaPhoneAlt className="info-icon" />
+              <div className="info-details">
+                <label>VOICE UPLINK</label>
+                <p>+91 ----- -----</p>
+              </div>
+            </div>
+
+            <div className="info-card">
+              <FaMapMarkerAlt className="info-icon" />
+              <div className="info-details">
+                <label>BASE LOCATION</label>
+                <p>Bengaluru, India</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="social-uplink">
+            <p className="social-tag">NETWORK NODES</p>
+            <div className="social-icons">
+              <a
+                href="https://github.com/your-username"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://linkedin.com/in/bhavith-s"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://instagram.com/your-profile"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaInstagram />
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="contact-card">
           <form ref={form} onSubmit={sendEmail} className="contact-form">
+            <h2 className="title">Send a Signal</h2>
+            <p className={`description ${isSuccess ? "success-text" : ""}`}>
+              {status ||
+                "Transmitting across the cosmos. I'll respond at light speed."}
+            </p>
             <div style={{ display: "none" }}>
               <input
                 type="text"
