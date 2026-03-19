@@ -110,7 +110,7 @@ const Contacts = () => {
             <p className="social-tag">NETWORK NODES</p>
             <div className="social-icons">
               <a
-                href="https://github.com/your-username"
+                href="https://github.com/bhavi-th"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -124,7 +124,7 @@ const Contacts = () => {
                 <FaLinkedin />
               </a>
               <a
-                href="https://instagram.com/your-profile"
+                href="https://instagram.com/__bhavi__th__s"
                 target="_blank"
                 rel="noreferrer"
               >
