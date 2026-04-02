@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import {
   FaGithub,
@@ -74,6 +74,28 @@ const Contacts = () => {
         setStatus("Transmission Error. Please try again.");
       });
   };
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+        }
+      });
+    }, observerOptions);
+
+    // Observe sidebar and form card
+    const elements = document.querySelectorAll(
+      ".contact-sidebar, .contact-card",
+    );
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="contacts-section" id="contact">

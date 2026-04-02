@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../styles/pages/Timeline.css";
 
 const timelineData = [
@@ -31,20 +32,38 @@ const timelineData = [
 ];
 
 const Timeline = () => {
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.15, // Triggers when 15% of the card is visible
+      rootMargin: "0px 0px -50px 0px", // Trigger slightly before it hits the viewport
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+        }
+      });
+    }, observerOptions);
+
+    const items = document.querySelectorAll(".timeline-item");
+    items.forEach((item) => observer.observe(item));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="timeline-container">
+    <section className="timeline-container" id="experience">
       <div className="timeline-header">
         <h1>Career Timeline</h1>
-        <p>My professional journey and key milestones</p>
+        <p>System Logs & Academic Milestones</p>
       </div>
 
       <div className="timeline-wrapper">
-        {/* The Vertical Center Line */}
         <div className="center-line"></div>
 
         {timelineData.map((item, index) => (
           <div key={index} className={`timeline-item ${item.side}`}>
-            {/* The Dot on the line */}
             <div className="timeline-dot"></div>
 
             <div className="timeline-card">
@@ -64,7 +83,7 @@ const Timeline = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

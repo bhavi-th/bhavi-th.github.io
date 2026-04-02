@@ -1,268 +1,215 @@
-/* Container - Now vertical to keep Header on top */
+/* ==========================================================================
+   Contacts.css - Concept: The Command Center
+   ========================================================================== */
+
 .contacts-section {
-  min-height: calc(100dvh - 10vmin);
-  padding: 80px 20px;
-  padding-bottom: 50px;
-  padding-top: 18vmin;
-  color: #ffffff;
+  min-height: 100vh;
+  background-color: #050505;
   display: flex;
-  flex-direction: column; /* Stack header above content */
   align-items: center;
-}
-
-/* New Wrapper for Sidebar + Form */
-.contact-main-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
-  gap: 8vmin;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 100px 5vw;
+  box-sizing: border-box;
 }
 
-/* Sidebar Styles (Left) */
+.contact-main-container {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* --- Entrance Animation Logic --- */
+.contact-sidebar,
+.contact-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+/* Revealed States */
+.contact-sidebar.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+  /* Form appears slightly after the sidebar */
+}
+
+/* --- Left Column: Sidebar Readout --- */
 .contact-sidebar {
-  max-width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 3rem;
 }
 
 .contact-sidebar .main-title {
-  text-align: left;
-  font-size: clamp(30px, 5vmin, 48px);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
-  margin-bottom: 10px;
-  background: linear-gradient(to right, #fff, #c4b5fd);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  letter-spacing: -2px;
+  color: #fff;
+  margin: 0;
+  line-height: 0.9;
+  text-transform: uppercase;
 }
 
 .info-group {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 .info-card {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 15px;
-  border-left: 3px solid #8a5cf5;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--accent-purple, #a855f7);
   transition: all 0.3s ease;
 }
 
-.info-card:hover {
-  background: rgba(138, 92, 245, 0.1);
-  transform: translateX(10px);
+/* Stagger the inner info-cards visually */
+.info-card:nth-child(1) {
+  transition-delay: 0.1s;
 }
 
-.info-icon {
-  font-size: 2.5vmin;
-  color: #8a5cf5;
+.info-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.info-card:hover {
+  background: rgba(168, 85, 247, 0.05);
+  transform: translateX(10px);
+  border-left-color: var(--accent-blue, #00f2ff);
 }
 
 .info-details label {
   display: block;
-  font-size: 1.5vmin;
-  color: #8a5cf5;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: var(--accent-blue, #00f2ff);
   letter-spacing: 2px;
-  margin-bottom: 4px;
+  margin-bottom: 0.3rem;
 }
 
-.info-details a,
-.info-details p {
-  color: white;
+.info-details a, .info-details p {
   text-decoration: none;
-  font-size: 1.75vmin;
-  font-family: system-ui;
+  color: var(--accent-purple);
 }
 
-.social-uplink {
-  margin-top: 10px;
-}
-
-.social-tag {
-  font-size: 1.5vmin;
-  letter-spacing: 3px;
-  opacity: 0.5;
-  margin-bottom: 15px;
-}
-
-.social-icons {
-  display: flex;
-  gap: 20px;
-}
-
-.social-icons a {
-  font-size: 3.5vmin;
-  color: white;
-  transition: 0.3s;
-}
-
-.social-icons a:hover {
-  color: #8a5cf5;
-  transform: translateY(-5px);
-  filter: drop-shadow(0 0 8px #8a5cf5);
-}
-
-/* Form Card (Right) */
+/* --- Right Column: The Input Terminal --- */
 .contact-card {
-  max-width: 550px;
-  background: rgba(17, 12, 34, 0.6);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(138, 92, 245, 0.2);
-  border-radius: 20px;
-  padding: 5vmin;
-  padding-block: 2.5vmin;
-  text-align: left;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(15, 15, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  border-radius: 8px;
 }
 
-.title {
-  font-size: clamp(24px, 4vmin, 40px);
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 15px;
-  background: linear-gradient(to bottom, #fff, #c4b5fd);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.contact-form .title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
 }
 
 .description {
+  font-size: 0.9rem;
   color: #94a3b8;
-  font-size: 1.75vmin;
-  text-align: center;
-  margin-bottom: 4.5vmin;
-  transition: all 0.3s ease;
-  min-height: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
+/* Form Styling */
 .form-group {
-  margin-bottom: 2.5vmin;
-  width: 100%; /* Changed from 50vmin to 100% of card */
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
   display: block;
-  font-size: 1.8vmin;
-  letter-spacing: 1.5px;
-  color: #94a3b8;
-  margin-bottom: 1.25vmin;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--accent-blue, #00f2ff);
+  letter-spacing: 2px;
+  margin-bottom: 0.8rem;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 15px;
-  color: white;
-  font-size: 1.8vmin;
-  font-family: system-ui;
-  outline: none;
+  padding: 1rem;
+  color: #fff;
+  font-size: 0.95rem;
+  border-radius: 4px;
   transition: all 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #8a5cf5;
-  background: rgba(138, 92, 245, 0.05);
-  box-shadow: 0 0 10px rgba(138, 92, 245, 0.2);
+  outline: none;
+  border-color: var(--accent-blue, #00f2ff);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
 }
 
-/* Button & Success Styles */
+/* Launch Button */
 .launch-button {
   width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #7c3aed, #3b82f6);
-  color: white;
+  padding: 1.2rem;
+  background: transparent;
+  border: 1px solid var(--accent-blue, #00f2ff);
+  color: var(--accent-blue, #00f2ff);
   font-weight: 700;
-  font-size: 2vmin;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-  margin-top: 10px;
+  transition: all 0.4s ease;
 }
 
-.launch-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(124, 58, 237, 0.4);
+.launch-button:hover {
+  background: var(--accent-blue, #00f2ff);
+  color: #000;
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
 }
 
-.launch-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.social-icons{
+  display: flex;
+  gap: 2vmin;
 }
 
-.success-text {
-  color: #10b981 !important;
-  font-weight: bold;
-  animation: pulse 2s infinite;
+.social-icons a svg{
+  height: 4vmin;
+  width: 4vmin;
+  color: lightgreen;
+  transition: color 250ms linear;
 }
 
-.launch-button.success-btn {
-  background: #10b981;
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+.social-icons a:hover svg{
+  color: var(--accent-blue);
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Responsive Handling */
+/* --- Responsive Adjustments --- */
 @media (max-width: 900px) {
   .contact-main-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 6vmin;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .contact-sidebar {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .contact-sidebar .main-title {
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .info-card {
-    justify-content: center;
-    border-left: none;
-    border-bottom: 2px solid #8a5cf5;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    font-size: 3vmin;
-  }
-
-  .launch-button {
-    font-size: 3.5vmin;
+    width: 100%;
+    box-sizing: border-box;
   }
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/pages/Projects.css";
 
@@ -18,6 +19,24 @@ const PROJECTS_DATA = [
 ];
 
 const Projects = ({ limit }) => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    const cards = document.querySelectorAll(".project-card");
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   const displayedProjects = limit
     ? PROJECTS_DATA.slice(0, limit)
     : PROJECTS_DATA;

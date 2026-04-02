@@ -2,7 +2,7 @@ import "../styles/pages/Hero.css";
 
 const Hero = () => {
   return (
-    <section className="hero-viewport">
+    <section className="hero-viewport" id="home">
       <div className="hero-content">
         <h1 className="name-main">BHAVITH S</h1>
         <h2 className="role-sub">FULL-STACK WEB DEVELOPER</h2>

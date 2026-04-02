@@ -1,182 +1,157 @@
+/* ==========================================================================
+   Projects.css - Concept: The Tactical Grid (Optimized)
+   ========================================================================== */
+
 .Projects {
-  min-height: calc(100dvh - 14vmin);
-  padding-inline: 5vmin;
-  padding-top: 80px;
-  color: #ffffff;
-  background-attachment: fixed;
+  min-height: 100vh;
+  background-color: #050505;
+  padding: 100px 5vw; /* Consistent with Timeline */
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .projects-container {
-  margin: 0 auto;
-  text-align: center;
+  max-width: 1200px;
+  width: 100%;
 }
 
-.subtitle {
-  color: #9d4edd;
-  letter-spacing: 0.8vmin;
-  font-size: 2vmin;
-  font-weight: 600;
-  margin-bottom: 2vmin;
-}
-
-.main-title {
-  font-size: clamp(4vmin, 6vmin, 12vmin);
-  font-weight: 800;
-  margin-bottom: 6vmin;
-  text-shadow: 0 0 3vmin rgba(0, 0, 0, 0.8);
-}
-
-.projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 4vmin;
-  margin-bottom: 5vmin;
-}
-
-.project-card {
-  background: rgba(10, 10, 20, 0.6);
-  max-width: 45vmin;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  backdrop-filter: blur(1.5vmin);
-  -webkit-backdrop-filter: blur(1.5vmin);
-  border: 0.2vmin solid rgba(157, 78, 221, 0.2);
-  border-radius: 4vmin;
-  padding: 4vmin;
+/* --- Header Section --- */
+.projects-header {
+  margin-bottom: 4rem;
   text-align: left;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.projects-header .subtitle {
+  font-family: monospace;
+  color: var(--accent-purple, #a855f7);
+  letter-spacing: 4px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.projects-header .main-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* --- The Bento Grid --- */
+.projects-grid {
+  display: grid;
+  /* Reduced min-width slightly for better fit on tablets */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+  gap: 2rem;
+}
+
+/* --- Project Card (Entry Animation) --- */
+.project-card {
+  position: relative;
+  background: rgba(15, 15, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem; /* Trimmed for better content balance */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  /* INITIAL HIDDEN STATE */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* STAGGERED EFFECT: Cards will appear one by one */
+.project-card:nth-child(1) { transition-delay: 0.1s; }
+.project-card:nth-child(2) { transition-delay: 0.2s; }
+.project-card:nth-child(3) { transition-delay: 0.3s; }
+.project-card:nth-child(n+4) { transition-delay: 0.4s; }
+
+.project-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-card:hover {
-  transform: translateY(-1.5vmin);
-  border-color: rgba(157, 78, 221, 0.6);
-  background: rgba(10, 10, 20, 0.8);
-  box-shadow: 0 2vmin 5vmin rgba(0, 0, 0, 0.5);
+  transform: translateY(-8px);
+  border-color: rgba(0, 242, 255, 0.4);
+  background: rgba(20, 20, 20, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
+/* --- Typography --- */
 .card-title {
-  font-size: 3vmin;
-  margin-bottom: 2vmin;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.5px;
 }
 
 .card-description {
-  color: #cbd5e1;
-  font-size: 2vmin;
+  color: #94a3b8;
+  font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 4vmin;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
 
+/* --- Tag System --- */
 .tag-container {
   display: flex;
-  gap: 1.5vmin;
-  margin-bottom: 4vmin;
   flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.5rem;
 }
 
 .project-tag {
-  font-size: 1.8vmin;
-  padding: 1vmin 2.5vmin;
-  border-radius: 10vmin;
-  background: rgba(157, 78, 221, 0.6);
-  border: 0.3vmin solid rgb(157, 78, 221);
-  color: #e9d5ff;
-  white-space: nowrap;
+  font-family: monospace;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  background: rgba(168, 85, 247, 0.05);
+  color: var(--accent-purple, #a855f7);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 4px;
 }
 
+/* --- Action Link --- */
 .project-link {
-  color: #2dd4bf;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 2vmin;
-  display: inline-flex;
-  align-items: center;
-  gap: 1.5vmin;
-}
-
-.project-link span {
-  transition: transform 0.2s;
-}
-
-.project-link:hover span {
-  transform: translateX(1vmin);
-}
-
-.project-link {
-  display: inline-flex;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: auto;
-  padding: 10px 0;
-  color: #64ffda;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
   transition: all 0.3s ease;
 }
 
 .project-link span {
+  color: var(--accent-blue, #00f2ff);
   transition: transform 0.3s ease;
-  display: inline-block;
 }
 
-.project-link:hover {
-  color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-
-.project-link:hover span {
+.project-card:hover .project-link span {
   transform: translateX(5px);
 }
 
-.view-more-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.view-more-btn {
-  padding: 12px 28px;
-  background-color: transparent;
-  color: #64ffda;
-  border: 1px solid #64ffda;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.view-more-btn:hover {
-  background-color: rgba(100, 255, 218, 0.1);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 720px) {
-  .subtitle {
-    font-size: 3vmin;
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .Projects {
+    padding: 80px 20px;
   }
-
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
   .project-card {
-    max-width: 80%;
-    width: 80%;
-  }
-
-  .card-title {
-    font-size: 4.5vmin;
-  }
-
-  .card-description {
-    font-size: 3.5vmin;
-  }
-
-  .project-tag {
-    font-size: 2.5vmin;
-  }
-
-  .project-link {
-    font-size: 3vmin;
+    padding: 1.5rem;
   }
 }

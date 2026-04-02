@@ -3,36 +3,31 @@ import "../styles/pages/Skills.css";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [activeTech, setActiveTech] = useState(null);
   const sectionRef = useRef(null);
 
-  const orbits = [
+  const techStack = [
     {
-      id: "inner",
-      dist: "20vmin",
-      speed: "20s",
-      skills: [{ name: "React", type: "frontend" }],
+      id: "foundations",
+      title: "Foundations",
+      color: "blue",
+      items: ["JavaScript", "React", "CSS3", "Git"],
     },
     {
-      id: "mid",
-      dist: "27vmin",
-      speed: "35s",
-      skills: [
-        { name: "Express", type: "backend" },
-        { name: "JavaScript", type: "frontend" },
-      ],
+      id: "architecture",
+      title: "Architecture",
+      color: "purple",
+      items: ["Node.js", "Express", "RESTful APIs", "NoSQL"],
     },
     {
-      id: "outer",
-      dist: "34vmin",
-      speed: "50s",
-      skills: [
-        { name: "CSS", type: "frontend" },
-        { name: "Node.js", type: "backend" },
-        { name: "Git", type: "tools" },
-      ],
+      id: "solutions",
+      title: "Solutions",
+      color: "white",
+      items: ["UI/UX Design", "Performance Optimization", "Scalability"],
     },
   ];
 
+  // Intersection Observer to trigger entrance animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -40,7 +35,7 @@ const Skills = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.4 },
+      { threshold: 0.2 } // Trigger when 20% of section is visible
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -49,39 +44,60 @@ const Skills = () => {
 
   return (
     <section className="Skills" id="skills" ref={sectionRef}>
-      {/* Background Header Text */}
-      <div className={`skills-bg-header ${isVisible ? "fade-in" : ""}`}>
-        <h5 className="skills-subtitle">NEURAL NETWORK</h5>
-        <h1 className="skills-title">My Tech Stack</h1>
-      </div>
-
-      {/* Foreground Orbits */}
-      <div className={`solar-system-container ${isVisible ? "active" : ""}`}>
-        {orbits.map((orbit) => (
-          <div
-            key={orbit.id}
-            className="orbit-ring"
-            style={{
-              width: `calc(${orbit.dist} * 2)`,
-              height: `calc(${orbit.dist} * 2)`,
-              animationDuration: orbit.speed,
-            }}
-          >
-            {orbit.skills.map((skill, index) => (
-              <div
-                key={index}
-                className={`skill-node ${skill.type}`}
-                style={{
-                  "--index": index,
-                  "--total": orbit.skills.length,
-                  "--push": orbit.dist,
-                }}
-              >
-                <span>{skill.name}</span>
-              </div>
-            ))}
+      <div className="skills-layout-container">
+        
+        {/* L-Column: Dynamic Title Block */}
+        <div className={`skills-header-block ${isVisible ? "fade-in-up" : ""}`}>
+          <div className="section-subtitle">03 / SKILLS</div>
+          <h2 className="section-main-title">Core <br />Tech Stack</h2>
+          <div className="status-message">
+            {activeTech 
+              ? `Exploring // ${activeTech}`
+              : "// Interactive Cascade"
+            }
           </div>
-        ))}
+        </div>
+
+        {/* R-Column: The Waterfall/Cascade Container */}
+        <div className={`cascade-container ${isVisible ? "activate-stack" : ""}`}>
+          {techStack.map((level, levelIndex) => (
+            <div 
+              key={level.id} 
+              className={`cascade-level level-${level.color}`}
+              style={{ "--level-index": levelIndex }}
+            >
+              {/* Level Title (e.g., FOUNDATIONS) */}
+              <div className="level-meta">
+                <span className="level-number">0{levelIndex + 1}</span>
+                <span className="level-title-text">{level.title}</span>
+              </div>
+
+              {/* Grid of actual skill blocks */}
+              <div className="skills-grid">
+                {level.items.map((skill, skillIndex) => (
+                  <div
+                    key={skill}
+                    className="skill-block"
+                    style={{ "--skill-index": skillIndex }}
+                    onMouseEnter={() => setActiveTech(skill)}
+                    onMouseLeave={() => setActiveTech(null)}
+                  >
+                    <div className="skill-content">
+                      <span className="skill-name-text">{skill}</span>
+                    </div>
+                    {/* The "Energy Surge" element that lights up on hover */}
+                    <div className="hover-surge"></div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* The visual "cascade pipe" connecting the levels */}
+              {levelIndex < techStack.length - 1 && (
+                <div className="cascade-connector"></div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

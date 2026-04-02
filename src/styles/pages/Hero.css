@@ -1,102 +1,132 @@
+/* ==========================================================================
+   Hero.css - Optimized for Zero-Overflow & Responsive Precision
+   ========================================================================== */
+
 .hero-viewport {
-  height: 100dvh;
-  background: var(--bg-deep);
+  height: 100vh;
+  /* Use dvh (Dynamic Viewport Height) for better mobile browser support */
+  height: 100dvh; 
+  width: 100%;
+  background-color: #050505;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  color: var(--text-primary);
-  font-family: "Orbitron", sans-serif;
+  /* Ensure box-sizing is handled to prevent padding issues */
+  box-sizing: border-box; 
+}
+
+/* Background "Ghost" Text for Depth */
+.hero-viewport::after {
+  content: "BHAVITH";
+  position: absolute;
+  /* 25vw is perfect, but we ensure it never pushes the container */
+  font-size: 22vw; 
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap; /* Prevent accidental wrapping */
 }
 
 .hero-content {
-  margin-bottom: 4vmin;
-  width: max-content;
+  position: relative;
+  z-index: 1;
+  text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  z-index: 2;
-  mix-blend-mode: difference;
+  align-items: center;
+  padding: 0 20px; /* Safety padding for very narrow screens */
 }
 
+/* --- Main Name --- */
 .name-main {
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif;
-  font-size: 16vmin;
-  margin: 0;
+  font-size: clamp(3.5rem, 12vw, 9rem); /* Lowered min slightly for iPhone SE */
   font-weight: 900;
-  letter-spacing: -0.5vmin;
-  animation: float 6s ease-in-out infinite;
-  background: linear-gradient(to bottom, #ffffff 40%, var(--accent-purple));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.3));
-}
-
-.role-sub {
-  font-size: 2vmin;
-  letter-spacing: 0.8vmin;
-  color: var(--accent-blue);
-  opacity: 0.8;
-  margin-top: 1vmin;
+  color: #fff;
+  letter-spacing: -0.04em; /* Using em for proportional spacing */
+  margin: 0;
+  line-height: 0.9; /* Slightly increased for better font-crop handling */
   text-transform: uppercase;
+  animation: heroFadeIn 1s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
+/* --- Role Subtitle --- */
+.role-sub {
+  font-family: monospace;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  font-weight: 400;
+  color: var(--accent-blue);
+  letter-spacing: clamp(3px, 1vw, 6px); /* Responsive tracking */
+  margin: 1.5rem 0 2.5rem 0;
+  text-transform: uppercase;
+  opacity: 0.8;
+  animation: heroFadeIn 1s cubic-bezier(0.23, 1, 0.32, 1) 0.3s both;
+}
+
+/* --- CTA Button --- */
 #work-btn {
-  margin-top: 5vmin;
-  padding: 1.8vmin 4.5vmin;
-  font-size: 1.8vmin;
-  font-family: "Orbitron", sans-serif;
-  font-weight: bold;
   background: transparent;
-  color: white;
-  border: 1px solid var(--accent-blue);
-  border-radius: 0.5vmin;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 1rem 2.5rem; /* Trimmed slightly for better mobile fit */
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
   overflow: hidden;
+  transition: all 0.4s ease;
+  animation: heroFadeIn 1s cubic-bezier(0.23, 1, 0.32, 1) 0.6s both;
+  outline: none;
 }
 
 #work-btn:hover {
-  background: var(--accent-blue);
-  color: var(--bg-deep);
-  box-shadow: 0px 0px 25px var(--accent-blue);
-  transform: translateY(-3px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+  transform: translateY(-2px); /* Switched scale to translate for smoother rendering */
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
+/* Corner Brackets - Using clamping to keep them from hitting edges */
+.hero-viewport::before {
+  content: "";
+  position: absolute;
+  top: clamp(20px, 5%, 40px);
+  left: clamp(20px, 5%, 40px);
+  width: clamp(40px, 10vw, 100px);
+  height: clamp(40px, 10vw, 100px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+/* --- Animations --- */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Reduced movement for snappier feel */
+    filter: blur(10px);
   }
-  50% {
-    transform: translateY(-15px) rotate(0.5deg);
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }
 
-@media (max-aspect-ratio: 1/1) or (max-width: 768px) {
-  .hero-content {
-    gap: 2vmin;
-    margin-bottom: 20vmin;
-  }
-
-  .name-main {
-    font-size: 16vmin;
+/* --- Mobile Fixes --- */
+@media (max-width: 768px) {
+  .hero-viewport::after {
+    font-size: 35vw; /* Slightly reduced to ensure no side-scrolling */
   }
 
   .role-sub {
-    font-size: 3vmin;
-    letter-spacing: 0.4vmin;
-  }
-
-  #work-btn {
-    font-size: 3.5vmin;
-    padding: 3vmin 8vmin;
+    margin: 1rem 0 2rem 0;
   }
 }
