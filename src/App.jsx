@@ -5,7 +5,6 @@ import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
 import Contacts from "./pages/Contacts";
 import Footer from "./pages/Footer";
-import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {

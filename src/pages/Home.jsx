@@ -1,4 +1,3 @@
-import "../styles/pages/Home.css";
 import Timeline from "./Timeline";
 import Hero from "./Hero";
 import Skills from "./Skills";

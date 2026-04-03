@@ -5,8 +5,6 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // "instant" is usually better for app-like feel, 
-    // but you can use "smooth" if you want a motorized scroll effect.
     window.scrollTo({
       top: 0,
       left: 0,

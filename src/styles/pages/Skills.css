@@ -1,22 +1,15 @@
-/* ==========================================================================
-   Skills.css - Redesign Concept: The Interactive Tech Cascade
-   ========================================================================== */
-
 .Skills {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #050505; /* Consistent Deep Matte Black */
+  background-color: #050505; 
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
   overflow: hidden;
   padding: 10vmin 5vw;
 }
 
-/* Main Layout Structure 
-   Creates a responsive split-screen (30% Title / 70% Waterfall)
-*/
 .skills-layout-container {
   max-width: 1400px;
   width: 100%;
@@ -26,15 +19,11 @@
   align-items: flex-start;
 }
 
-/* ==========================================================================
-   L-COLUMN: Header Block
-   ========================================================================== */
-
 .skills-header-block {
   display: flex;
   flex-direction: column;
   position: sticky;
-  top: 15vh; /* Sticks to top when scrolling */
+  top: 15vh; 
 }
 
 .section-subtitle {
@@ -56,15 +45,11 @@
 }
 
 .status-message {
-  font-family: monospace; /* Developer/Code Aesthetic */
+  font-family: monospace; 
   font-size: 0.9rem;
   color: var(--text-dim);
   transition: color 0.3s ease;
 }
-
-/* ==========================================================================
-   R-COLUMN: The Waterfall Cascade
-   ========================================================================== */
 
 .cascade-container {
   display: flex;
@@ -72,12 +57,10 @@
   gap: 6rem;
 }
 
-/* Common visual properties for all levels */
 .cascade-level {
   position: relative;
 }
 
-/* The Meta-Info for each level (Number and Label) */
 .level-meta {
   display: flex;
   align-items: center;
@@ -98,25 +81,19 @@
   font-size: 1.1rem;
 }
 
-/* The Skills Grid 
-   Dynamic sizing: blocks will be at least 150px and fill the row 
-*/
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1.25rem;
 }
 
-/* Individual Skill Block Styling
-   Premium Glassmorphism + Accent Color Lighting 
-*/
 .skill-block {
   position: relative;
   background: rgba(20, 20, 20, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 6px; /* Architectural, less round */
+  border-radius: 7px; 
   padding: 1.5rem;
   min-height: 80px;
   display: flex;
@@ -128,7 +105,7 @@
 }
 
 .skill-content {
-  z-index: 2; /* Keeps text above hover effects */
+  z-index: 2;
 }
 
 .skill-name-text {
@@ -137,14 +114,9 @@
   color: var(--text-primary);
 }
 
-/* ==========================================================================
-   COLOR SPECIFICS (Surge Effects)
-   ========================================================================== */
-
-/* The "Energy Surge" base state */
 .hover-surge {
   position: absolute;
-  top: 100%; /* Starts below the block */
+  top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -152,7 +124,6 @@
   z-index: 1;
 }
 
-/* LEVEL 1: BLUE */
 .level-blue .skill-block:hover {
   border-color: rgba(0, 242, 255, 0.4);
   box-shadow: 0 10px 40px -10px rgba(0, 242, 255, 0.2);
@@ -161,7 +132,6 @@
   background: linear-gradient(180deg, rgba(0, 242, 255, 0.01) 0%, rgba(0, 242, 255, 0.08) 100%);
 }
 
-/* LEVEL 2: PURPLE */
 .level-purple .skill-block:hover {
   border-color: rgba(168, 85, 247, 0.4);
   box-shadow: 0 10px 40px -10px rgba(168, 85, 247, 0.2);
@@ -170,43 +140,31 @@
   background: linear-gradient(180deg, rgba(168, 85, 247, 0.01) 0%, rgba(168, 85, 247, 0.08) 100%);
 }
 
-/* Hover Action - Surge rises into view */
 .skill-block:hover .hover-surge {
   transform: translateY(-100%);
 }
 
-/* ==========================================================================
-   CASCADE CONNECTORS (The pipes)
-   ========================================================================== */
-
 .cascade-connector {
   position: absolute;
-  bottom: -4rem; /* Gap between grid and pipe start */
-  left: 2rem; /* Aligns with Level Number */
+  bottom: -4rem; 
+  left: 2rem;
   width: 1px;
-  height: 3rem; /* Height of the pipe */
+  height: 3rem;
   background: linear-gradient(180deg, var(--text-dim) 0%, rgba(148, 163, 184, 0.1) 100%);
   opacity: 0.3;
 }
 
-/* ==========================================================================
-   ENTRANCE ANIMATIONS (Staggered Load)
-   ========================================================================== */
-
-/* Global animation class triggered by IntersectionObserver */
 .fade-in-up {
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
 }
 
-/* Staggering the cascade levels (1, 2, 3) */
 .activate-stack .cascade-level {
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
   animation-delay: calc(var(--level-index) * 0.25s + 0.3s);
 }
 
-/* Staggering the skills inside each grid */
 .activate-stack .skill-block {
   opacity: 0;
   animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
@@ -223,25 +181,21 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-/* ==========================================================================
-   RESPONSIVE (Mobile First)
-   ========================================================================== */
-
 @media (max-width: 968px) {
   .skills-layout-container {
-    grid-template-columns: 1fr; /* Stack vertically */
+    grid-template-columns: 1fr; 
     gap: 4rem;
   }
   
   .skills-header-block {
-    position: relative; /* Remove sticky */
+    position: relative; 
     top: 0;
     text-align: center;
     align-items: center;
   }
   
   .section-main-title br {
-    display: none; /* remove line break */
+    display: none;
   }
 }
 

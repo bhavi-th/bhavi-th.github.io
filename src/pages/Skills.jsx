@@ -27,7 +27,6 @@ const Skills = () => {
     },
   ];
 
-  // Intersection Observer to trigger entrance animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -35,7 +34,7 @@ const Skills = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 } // Trigger when 20% of section is visible
+      { threshold: 0.2 } 
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -46,7 +45,6 @@ const Skills = () => {
     <section className="Skills" id="skills" ref={sectionRef}>
       <div className="skills-layout-container">
         
-        {/* L-Column: Dynamic Title Block */}
         <div className={`skills-header-block ${isVisible ? "fade-in-up" : ""}`}>
           <div className="section-subtitle">03 / SKILLS</div>
           <h2 className="section-main-title">Core <br />Tech Stack</h2>
@@ -58,7 +56,6 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* R-Column: The Waterfall/Cascade Container */}
         <div className={`cascade-container ${isVisible ? "activate-stack" : ""}`}>
           {techStack.map((level, levelIndex) => (
             <div 
@@ -66,13 +63,11 @@ const Skills = () => {
               className={`cascade-level level-${level.color}`}
               style={{ "--level-index": levelIndex }}
             >
-              {/* Level Title (e.g., FOUNDATIONS) */}
               <div className="level-meta">
                 <span className="level-number">0{levelIndex + 1}</span>
                 <span className="level-title-text">{level.title}</span>
               </div>
 
-              {/* Grid of actual skill blocks */}
               <div className="skills-grid">
                 {level.items.map((skill, skillIndex) => (
                   <div
@@ -85,13 +80,11 @@ const Skills = () => {
                     <div className="skill-content">
                       <span className="skill-name-text">{skill}</span>
                     </div>
-                    {/* The "Energy Surge" element that lights up on hover */}
                     <div className="hover-surge"></div>
                   </div>
                 ))}
               </div>
               
-              {/* The visual "cascade pipe" connecting the levels */}
               {levelIndex < techStack.length - 1 && (
                 <div className="cascade-connector"></div>
               )}

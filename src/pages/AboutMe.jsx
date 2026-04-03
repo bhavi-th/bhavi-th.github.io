@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "../styles/pages/AboutMe.css";
 
 const AboutMe = () => {
@@ -14,7 +14,6 @@ const AboutMe = () => {
       { threshold: 0.15 },
     );
 
-    // Observe the content block and individual stat cards
     const elements = document.querySelectorAll(".about-content, .stat-card");
     elements.forEach((el) => observer.observe(el));
 
@@ -24,7 +23,6 @@ const AboutMe = () => {
   return (
     <section className="AboutMe" id="about">
       <div className="about-container">
-        {/* --- Left Column: Narrative --- */}
         <div className="about-content">
           <p className="about-subtitle">CORE_IDENTITY</p>
           <h2 className="about-title">
@@ -54,7 +52,6 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* --- Right Column: Stats Grid --- */}
         <div className="about-stats-grid">
           <div className="stat-card">
             <h4 className="stat-value">2+</h4>

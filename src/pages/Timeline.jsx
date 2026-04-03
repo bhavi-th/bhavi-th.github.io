@@ -34,8 +34,8 @@ const timelineData = [
 const Timeline = () => {
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.15, // Triggers when 15% of the card is visible
-      rootMargin: "0px 0px -50px 0px", // Trigger slightly before it hits the viewport
+      threshold: 0.15, 
+      rootMargin: "0px 0px -50px 0px", 
     };
 
     const observer = new IntersectionObserver((entries) => {

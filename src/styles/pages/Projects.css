@@ -1,11 +1,7 @@
-/* ==========================================================================
-   Projects.css - Concept: The Tactical Grid (Optimized)
-   ========================================================================== */
-
 .Projects {
   min-height: 100vh;
   background-color: #050505;
-  padding: 100px 5vw; /* Consistent with Timeline */
+  padding: 100px 5vw; 
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -17,7 +13,6 @@
   width: 100%;
 }
 
-/* --- Header Section --- */
 .projects-header {
   margin-bottom: 4rem;
   text-align: left;
@@ -40,15 +35,12 @@
   text-transform: uppercase;
 }
 
-/* --- The Bento Grid --- */
 .projects-grid {
   display: grid;
-  /* Reduced min-width slightly for better fit on tablets */
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
   gap: 2rem;
 }
 
-/* --- Project Card (Entry Animation) --- */
 .project-card {
   position: relative;
   background: rgba(15, 15, 15, 0.5);
@@ -60,13 +52,11 @@
   height: 100%;
   overflow: hidden;
 
-  /* INITIAL HIDDEN STATE */
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* STAGGERED EFFECT: Cards will appear one by one */
 .project-card:nth-child(1) { transition-delay: 0.1s; }
 .project-card:nth-child(2) { transition-delay: 0.2s; }
 .project-card:nth-child(3) { transition-delay: 0.3s; }
@@ -84,7 +74,6 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* --- Typography --- */
 .card-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -101,7 +90,6 @@
   flex-grow: 1;
 }
 
-/* --- Tag System --- */
 .tag-container {
   display: flex;
   flex-wrap: wrap;
@@ -119,7 +107,6 @@
   border-radius: 4px;
 }
 
-/* --- Action Link --- */
 .project-link {
   text-decoration: none;
   color: #fff;
@@ -140,7 +127,6 @@
   transform: translateX(5px);
 }
 
-/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
   .Projects {
     padding: 80px 20px;
