@@ -1,119 +1,114 @@
-.hero-viewport {
-  height: 100vh;
+.hero {
+  position: relative;
   height: 100dvh;
   width: 100%;
-  background-color: #050505;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   overflow: hidden;
-  box-sizing: border-box;
 }
 
-.hero-viewport::after {
-  content: "BHAVITH";
+#hero-greet {
   position: absolute;
-  font-size: 22vw;
-  font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.03);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 20vmin;
+  width: max-content;
+  color: black;
+  z-index: 10;
+  text-align: center;
+}
+
+#hero-greet::after {
+  display: inline-block;
+  content: "";
+  height: 20vmin;
+  width: 6vmin;
+  transform: translateY(-20%);
+  background-color: black;
+  animation: blink 0.7s infinite 4s, cursor-enter 2s linear forwards;
+  vertical-align: middle;
+  transition: all 0.4s ease-in-out;
+}
+
+@keyframes cursor-enter{
+  0%{
+    height: 0px;
+    width: 0px;
+  }
+  10%{
+    height: 5px;
+    width:5px;
+  }
+  50%{
+    height: 20vmin;
+    width: 5px;
+  }
+  75%{
+    height: 20vmin;
+    width: 6vmin;
+  }
+}
+
+#hero-greet.collapse-cursor::after {
+  animation: cursor-exit 2s linear forwards;
+}
+
+@keyframes cursor-exit{
+  0%,10%{
+    height: 22vmin;
+    width: 5rem;
+  }
+  50%{
+    height: 22vmin;
+    width: 5px;
+  }
+  75%{
+    height: 5px;
+    width:5px;
+  }
+  100%{
+    height: 10px;
+    width: 10px;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#hero-content {
+  position: absolute;
+  background-color: black;
+  height: 0dvh;
+  width: 0dvh;
+  border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 0;
-  pointer-events: none;
-  white-space: nowrap;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px;
+#hero-content.expand-active {
+  animation: expand 2s linear forwards 2s;
 }
 
-.name-main {
-  font-size: clamp(3.5rem, 12vw, 9rem);
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: -0.04em;
-  margin: 0;
-  line-height: 0.9;
-  text-transform: uppercase;
-  animation: heroFadeIn 1s cubic-bezier(0.23, 1, 0.32, 1) both;
-}
-
-.role-sub {
-  font-family: monospace;
-  font-size: clamp(0.7rem, 2vw, 1.1rem);
-  font-weight: 400;
-  color: var(--accent-blue);
-  letter-spacing: clamp(3px, 1vw, 6px);
-  margin: 1.5rem 0 2.5rem 0;
-  text-transform: uppercase;
-  opacity: 0.8;
-  animation: heroFadeIn 1s cubic-bezier(0.23, 1, 0.32, 1) 0.3s both;
-}
-
-#work-btn {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-  padding: 1rem 2.5rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  animation: heroFadeIn 1s cubic-bezier(0.23, 1, 0.32, 1) 0.6s both;
-  outline: none;
-}
-
-#work-btn:hover {
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.hero-viewport::before {
-  content: "";
-  position: absolute;
-  top: clamp(20px, 5%, 40px);
-  left: clamp(20px, 5%, 40px);
-  width: clamp(40px, 10vw, 100px);
-  height: clamp(40px, 10vw, 100px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  pointer-events: none;
-}
-
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-    filter: blur(10px);
+@keyframes expand {
+  0% {
+    height: 0dvh;
+    width: 0dvh;
+    border-radius: 50%;
   }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+  50% {
+    height: 100dvh;
+    width: 100dvh;
+    border-radius: 50%;
   }
-}
-
-@media (max-width: 768px) {
-  .hero-viewport::after {
-    font-size: 35vw;
-  }
-
-  .role-sub {
-    margin: 1rem 0 2rem 0;
+  100% {
+    height: 100dvh;
+    width: 100vw;
+    border-radius: 0%;
   }
 }
