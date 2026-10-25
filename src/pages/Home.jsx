@@ -15,6 +15,7 @@ const Home = () => {
   const [isClosing, setIsClosing] = useState(false);
   const [lotusAtTop, setLotusAtTop] = useState(false);
   const [lotusSpin, setLotusSpin] = useState(false);
+  const [lotusFixed, setLotusFixed] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,6 +43,10 @@ const Home = () => {
     setHeroCompleted(true);
     setLotusAtTop(false);
     setLotusSpin(true);
+
+    setTimeout(() => {
+      setLotusFixed(true);
+    }, 1000);
 
     setTimeout(() => {
       setIsClosing(true);
@@ -118,8 +123,8 @@ const Home = () => {
         </div>
       )}
 
-      {isLoaded && !isClosing && (
-        <div className={`lotus-container lotus-transition ${lotusAtTop ? 'lotus-at-top' : ''} ${lotusSpin ? 'lotus-spin' : ''}`}>
+      {isLoaded && (
+        <div className={`lotus-container lotus-transition ${lotusAtTop ? 'lotus-at-top' : ''} ${lotusSpin ? 'lotus-spin' : ''} ${lotusFixed ? 'lotus-fixed' : ''}`}>
           <div className="lotus">
             {/* Outer layer */}
             <div className="petal petal-outer petal-outer-1"></div>

@@ -38,6 +38,15 @@
   z-index: 1001;
 }
 
+.lotus-fixed {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  transition: none !important;
+  z-index: 50;
+}
+
 .lotus-transition .petal {
   animation: none;
   opacity: 1;
@@ -60,6 +69,11 @@
 
 .lotus-spin .lotus {
   animation: spin 2s ease-in-out forwards;
+}
+
+.lotus-fixed .lotus {
+  animation: none;
+  transform: rotate(180deg) scale(1.2);
 }
 
 @keyframes spin {
