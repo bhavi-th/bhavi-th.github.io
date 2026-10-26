@@ -71,10 +71,37 @@ const Hero = ({ coverFinished, onHeroComplete, onExpansionStart }) => {
 
   return (
     <div className="hero">
+      {startExpansion && (
+        <nav className="hero-nav" aria-label="Main navigation">
+          <span className="hero-nav-brand">BHAVITH S</span>
+          <div className="hero-nav-links">
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      )}
       <span id="hero-greet" className={startExpansion ? "collapse-cursor" : ""}>
         {currentText}
       </span>
       <div id="hero-content" className={startExpansion ? "expand-active" : ""}>
+        <div className="hero-copy">
+          <p className="hero-eyebrow">COMPUTER SCIENCE · FULL-STACK DEVELOPMENT</p>
+          <h1>Bhavith S</h1>
+          <p className="hero-intro">
+            Building thoughtful digital experiences with clean systems and
+            considered detail.
+          </p>
+          <div className="hero-actions">
+            <a href="#projects" className="hero-action hero-action-primary">
+              Explore my work <span aria-hidden="true">↗</span>
+            </a>
+            <a href="#contact" className="hero-action hero-action-secondary">
+              Get in touch
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
